@@ -12,9 +12,9 @@ export default function ButtonGetStarted() {
       transition={{ duration: 0.5 }}
       className="button mt-6"
     >
-      <span className="actual-text">&nbsp;uiverse&nbsp;</span>
+      <span className="actual-text">&nbsp;get&nbsp;started&nbsp;</span>
       <span aria-hidden="true" className="hover-text">
-        &nbsp;uiverse&nbsp;
+        &nbsp;get&nbsp;started&nbsp;
       </span>
     </motion.button>
   );

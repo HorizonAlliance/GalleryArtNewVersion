@@ -13,7 +13,7 @@ export default function RetroGrid({
     <div
       className={cn(
         "pointer-events-none absolute size-full overflow-hidden opacity-50 [perspective:200px]",
-        className,
+        className
       )}
       style={{ "--grid-angle": `${angle}deg` } as React.CSSProperties}
     >
@@ -25,10 +25,10 @@ export default function RetroGrid({
             "[background-repeat:repeat] [background-size:60px_60px] [height:300vh] [inset:0%_0px] [margin-left:-50%] [transform-origin:100%_0_0] [width:600vw]",
 
             // Light Styles
-            "[background-image:linear-gradient(to_right,#e6f429_1px,transparent_0),linear-gradient(to_bottom,#e6f429_1px,transparent_0)]",
+            "[background-image:linear-gradient(to_right,#e6f429_1px,transparent_0),linear-gradient(to_bottom,#22c55e_1px,transparent_0)]",
 
             // Dark styles
-            "dark:[background-image:linear-gradient(to_right,#e6f429_1px,transparent_0),linear-gradient(to_bottom,#e6f429_1px,transparent_0)]",
+            "dark:[background-image:linear-gradient(to_right,#e6f429_1px,transparent_0),linear-gradient(to_bottom,#22c55e_1px,transparent_0)]"
           )}
         />
       </div>
