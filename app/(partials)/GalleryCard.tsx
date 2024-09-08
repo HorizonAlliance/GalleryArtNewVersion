@@ -3,89 +3,9 @@ import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-
-// Define the card structure
-type Card = {
-  id: number;
-  content: JSX.Element | React.ReactNode | string;
-  className: string;
-  thumbnail: string;
-  title: string;
-};
-
-const cards = [
-  {
-    id: 1,
-    content: (
-      <div>
-        <p className="font-bold md:text-4xl text-xl text-white">
-          House in the woods
-        </p>
-        <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-          A serene and tranquil retreat, this house in the woods offers a
-          peaceful escape from the hustle and bustle of city life.
-        </p>
-      </div>
-    ),
-    className: "md:col-span-2",
-    thumbnail:
-      "https://images.unsplash.com/photo-1476231682828-37e571bc172f?q=80&w=3474&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    title: "House in the Woods",
-  },
-  {
-    id: 2,
-    content: (
-      <div>
-        <p className="font-bold md:text-4xl text-xl text-white">
-          House above the clouds
-        </p>
-        <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-          Perched high above the world, this house offers breathtaking views and
-          a unique living experience.
-        </p>
-      </div>
-    ),
-    className: "col-span-1",
-    thumbnail:
-      "https://images.unsplash.com/photo-1464457312035-3d7d0e0c058e?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    title: "House Above the Clouds",
-  },
-  {
-    id: 3,
-    content: (
-      <div>
-        <p className="font-bold md:text-4xl text-xl text-white">
-          Greens all over
-        </p>
-        <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-          A house surrounded by greenery and nature&apos;s beauty. It&apos;s the
-          perfect place to relax, unwind, and enjoy life.
-        </p>
-      </div>
-    ),
-    className: "col-span-1",
-    thumbnail:
-      "https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    title: "Greens All Over",
-  },
-  {
-    id: 4,
-    content: (
-      <div>
-        <p className="font-bold md:text-4xl text-xl text-white">
-          Rivers are serene
-        </p>
-        <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-          A house by the river is a place of peace and tranquility.
-        </p>
-      </div>
-    ),
-    className: "md:col-span-2",
-    thumbnail:
-      "https://images.unsplash.com/photo-1475070929565-c985b496cb9f?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    title: "Rivers Are Serene",
-  },
-];
+import BlurFade from "@/app/(partials)/BlurFade";
+import { VelocityScroll } from "@/app/(partials)/Velocity";
+import { Card, cards } from "@/app/(partials)/Card";
 
 // LayoutGrid component
 export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
@@ -141,13 +61,18 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
 // Image component to display image
 const ImageComponent = ({ card }: { card: Card }) => {
   return (
-    <motion.img
-      src={card.thumbnail}
-      height="500"
-      width="500"
-      className="object-cover object-top absolute inset-0 h-full w-full transition-transform duration-200 img-modal"
-      alt="thumbnail"
-    />
+    <div className="flex items-center justify-center h-full w-full bg-black text-white">
+      <p className="text-4xl sm:text-7xl font-bold text-center text-blue dark:text-white">
+        {card.category} {/* Tampilkan tulisan sebagai pengganti gambar */}
+      </p>
+    </div>
+    // <motion.img
+    //   src={card.thumbnail}
+    //   height="500"
+    //   width="500"
+    //   className="object-cover object-top absolute inset-0 h-full w-full transition-transform duration-200 img-modal"
+    //   alt="thumbnail"
+    // />
   );
 };
 
@@ -211,10 +136,47 @@ const Modal = ({
   );
 };
 
+export function BlurFadeDemo() {
+  return (
+    <section
+      id="photos"
+      className="w-full h-full p-10 grid grid-cols-1 max-w-7xl mx-auto relative"
+    >
+      <div className="columns-3 sm:columns-3">
+        {cards.map((card, idx) => (
+          <BlurFade key={card.thumbnail} delay={0.25 + idx * 0.05} inView>
+            <img
+              className="mb-4 size-full rounded-lg object-contain"
+              src={card.thumbnail}
+              alt={card.title}
+            />
+          </BlurFade>
+        ))}
+      </div>
+    </section>
+  );
+}
+// photos 2
+
 export function LayoutGridDemo() {
   return (
-    <div className="h-screen py-20 w-full">
-      <LayoutGrid cards={cards} />
+    <div className="h-full py-20 w-full">
+      <VelocityScroll
+        text="CATEGORY"
+        default_velocity={2}
+        className="font-display text-center text-7xl font-bold tracking-[-0.02em] text-black drop-shadow-sm dark:text-white md:text-7xl md:leading-[5rem]"
+      />
+      <div className="h-screen">
+        <LayoutGrid cards={cards} />
+      </div>
+
+      <VelocityScroll
+        text="GALLERY"
+        default_velocity={2}
+        className="font-display text-center text-7xl font-bold tracking-[-0.02em] text-black drop-shadow-sm dark:text-white md:text-7xl md:leading-[5rem]"
+      />
+
+      <BlurFadeDemo />
     </div>
   );
 }
