@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../globals.css";
-import { FloatingDockDemo } from "../(partials)/FloatingDock";
-import DarkModeToggle from "../(partials)/buttondarkmode";
 import { ThemeProvider } from "../(partials)/ThemeProvider";
+import SidebarForNavbarAsli from "../(partials)/SidebarForNavbarAsli";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,8 +21,8 @@ export default function RootLayout({
     <html lang="en">
       <ThemeProvider>
         <body className={inter.className}>
+          <SidebarForNavbarAsli/>
           {children}
-          <FloatingDockDemo />
         </body>
       </ThemeProvider>
     </html>

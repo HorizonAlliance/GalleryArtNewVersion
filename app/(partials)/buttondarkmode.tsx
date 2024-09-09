@@ -6,13 +6,11 @@ const DarkModeToggle = () => {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    // Ensure that the component is only mounted on the client side
     setIsMounted(true);
   }, []);
 
   useEffect(() => {
     if (isMounted) {
-      // Retrieve the dark mode setting from localStorage if it exists
       const savedTheme = localStorage.getItem("theme");
       if (savedTheme) {
         setIsDarkMode(savedTheme === "dark");
@@ -22,7 +20,6 @@ const DarkModeToggle = () => {
 
   useEffect(() => {
     if (isMounted) {
-      // Apply the dark mode class based on the state
       if (isDarkMode) {
         document.documentElement.classList.add("dark");
         localStorage.setItem("theme", "dark");
@@ -38,11 +35,11 @@ const DarkModeToggle = () => {
   };
 
   if (!isMounted) {
-    return null; // Ensure no rendering during SSR
+    return null; 
   }
 
   return (
-    <div className="absolute top-2 right-2">
+    <div className="relative m-2  z-1000">
       <label className="toggle" htmlFor="switch">
         <input
           id="switch"

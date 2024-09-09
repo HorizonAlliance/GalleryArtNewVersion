@@ -4,7 +4,6 @@ import { cn } from "@/lib/utils";
 import Marquee from "@/components/ui/marquee";
 import { useState } from "react";
 
-// Review data
 const reviews = [
     {
         name: "Jack",
@@ -44,10 +43,9 @@ const reviews = [
     },
 ];
 
-// Split reviews into multiple rows
 const firstRow = reviews.slice(0, reviews.length / 2);
 const secondRow = reviews.slice(reviews.length / 2);
-const thirdRow = [...reviews].reverse();  // Reverse for variety
+const thirdRow = [...reviews].reverse(); 
 
 // ReviewCard Component
 const ReviewCard = ({
@@ -94,7 +92,7 @@ const ReviewCard = ({
 
 export function MarqueeDemo() {
     return (
-        <div className="relative flex h-[120vh] md:h-[150vh] w-full flex-col items-center justify-center overflow-hidden rounded-lg border-none bg-background md:shadow-xl">
+        <div className="relative flex h-[120vh] md:h-[150vh] w-full flex-col items-center justify-center overflow-hidden rounded-lg border-none bg-background">
             <Marquee pauseOnHover className="[--duration:20s]">
                 {firstRow.map((review, idx) => (
                     <ReviewCard key={idx} {...review} />
