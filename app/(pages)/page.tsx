@@ -7,10 +7,9 @@ import { RetroGridDemo } from "../(partials)/RetroBgGrid";
 import { TabsDemo } from "../(partials)/Tabs";
 import { TextRevealDemo } from "../(partials)/TextReveal";
 
-
 const page = () => {
   return (
-    <div className="dark:bg-black">
+    <div className="dark:bg-black ">
       <RetroGridDemo/>
       <MarqueeDemo/>
       <TextRevealDemo/>
