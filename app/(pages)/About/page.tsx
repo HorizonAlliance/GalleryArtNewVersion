@@ -21,54 +21,62 @@ const AboutPage = (props: Props) => {
     show: { opacity: 1, y: 0 },
   };
   return (
-    <section className="flex items-center mx-auto w-full h-[100vh] px-8 bg-gradient-to-t from-green-300 to-green-50">
-      <div className="relative mx-10 px-20 w-full grid grid-cols-2">
-        <motion.div
-          variants={container}
-          initial="hidden"
-          animate="show"
-          className="mx-auto w-full flex flex-col justify-center text-left px-10"
-        >
-          <motion.h1 variants={item} className="text-6xl font-bold">
-            About US
-          </motion.h1>
-          <motion.h3 variants={item} className="text-2xl font-bold">
-            What is US? US is what?
-          </motion.h3>
+    <>
+      <section className="flex items-center mx-auto w-full h-[100vh] lg:px-8 sm:px-2 bg-gradient-to-t from-green-300 to-green-50">
+        <div className="relative mx-10 lg:px-20 sm:px-2 w-full grid lg:grid-cols-2 sm:grid-rows-1">
           <motion.div
-            initial={{ opacity: 0, width: "0%" }}
-            animate={{ opacity: 1, width: "100%" }}
-            transition={{ duration: 0.5, delay: 0.5, ease: "easeInOut" }}
-            className="rounded-lg w-full bg-black h-[5px] mt-4"
-          ></motion.div>
-          <motion.p
+            variants={container}
+            initial="hidden"
+            animate="show"
+            className="mx-auto w-full flex flex-col justify-center text-left px-10"
+          >
+            <motion.h1 variants={item} className="text-6xl font-bold">
+              About US
+            </motion.h1>
+            <motion.h3 variants={item} className="text-2xl font-bold">
+              What is US? US is what?
+            </motion.h3>
+            <motion.div
+              initial={{ opacity: 0, width: "0%" }}
+              animate={{ opacity: 1, width: "100%" }}
+              transition={{ duration: 0.5, delay: 0.5, ease: "easeInOut" }}
+              className="rounded-lg w-full bg-black h-[5px] mt-4"
+            ></motion.div>
+            <motion.p
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 1, ease: "easeInOut" }}
+              className="mt-4 font-medium text-lg text-justify"
+            >
+              The U.S. is a country of 50 states covering a vast swath of North
+              America, with Alaska in the northwest and Hawaii extending the
+              nations presence into the Pacific Ocean. Major Atlantic Coast
+              cities are New York, a global finance and culture center, and
+              capital Washington, DC. Midwestern metropolis Chicago is known for
+              influential architecture and on the west coast, Los Angeles
+              Hollywood is famed for filmmaking.
+            </motion.p>
+          </motion.div>
+          <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 1, ease: "easeInOut" }}
-            className="mt-4 font-medium text-lg"
+            transition={{ duration: 0.5, delay: 1.3, ease: "easeInOut" }}
+            className="flex justify-center items-center w-full"
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
-            officiis ex dolorem consequatur unde, voluptates quasi, a molestias
-            nemo suscipit error magnam, minima veniam quisquam laudantium harum
-            deserunt rerum excepturi!
-          </motion.p>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 1.3, ease: "easeInOut" }}
-          className="flex justify-center items-center w-full"
-        >
-          <Image
-            src="https://images.unsplash.com/photo-1725504914698-c3e97f0e9ca4?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="logo"
-            width={500}
-            height={500}
-            className="rounded-lg shadow-black shadow-md"
-          />
-        </motion.div>
-      </div>
-    </section>
+            <Image
+              src="https://images.unsplash.com/photo-1725504914698-c3e97f0e9ca4?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="logo"
+              width={500}
+              height={500}
+              className="rounded-lg shadow-black shadow-md lg:block sm:hidden"
+            />
+          </motion.div>
+        </div>
+      </section>
+      <section className="mx-auto px-8 w-full h-[100vh] bg-gradient-to-b from-green-300 to-green-50">
+        <div></div>
+      </section>
+    </>
   );
 };
 
