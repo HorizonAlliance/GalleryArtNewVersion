@@ -5,11 +5,11 @@ import { Timeline } from "@/components/ui/timeline";
 export function HowItWorks() {
   const data = [
     {
-      title: "2024",
+      title: "Step One",
       content: (
         <div>
-          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-            Built and launched Aceternity UI and Aceternity UI Pro from scratch
+          <p className="text-[#48CFCB] dark:text-neutral-200 text-xs md:text-2xl font-normal mb-8">
+            Register And Login To Gallery Arts
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image
@@ -45,16 +45,11 @@ export function HowItWorks() {
       ),
     },
     {
-      title: "Early 2023",
+      title: "Step Two  ",
       content: (
         <div>
-          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-            I usually run out of copy, but when I see content this big, I try to
-            integrate lorem ipsum.
-          </p>
-          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-            Lorem ipsum is for people who are too lazy to write copy. But we are
-            not. Here are some more example of beautiful designs I built.
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-2xl font-normal mb-8">
+            Upload your first work here and see all the existing works.
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image
@@ -90,27 +85,24 @@ export function HowItWorks() {
       ),
     },
     {
-      title: "Changelog",
+      title: "Finally",
       content: (
         <div>
-          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4">
-            Deployed 5 new components on Aceternity today
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-2xlfont-normal mb-4">
+            Welcome to join us, please enjoy and share your work with everyone.
+          </p>
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-2xlfont-normal mb-4">
+            Check out some of the features available
           </p>
           <div className="mb-8">
             <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
-              ✅ Card grid component
+              ✅Profile Page
             </div>
             <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
-              ✅ Startup template Aceternity
+              ✅ Search Art Design in Gallery Page
             </div>
             <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
-              ✅ Random file upload lol
-            </div>
-            <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
-              ✅ Himesh Reshammiya Music CD
-            </div>
-            <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
-              ✅ Salman Bhai Fan Club registrations open
+              ✅ Find About me
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4">
