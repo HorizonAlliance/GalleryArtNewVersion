@@ -1,52 +1,30 @@
 "use client";
+
 import React, { useEffect, useState } from "react";
+import { useTheme } from "@/context/ThemeProvider";
 import "@/assets/css/toggle.css";
+
 const DarkModeToggle = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const { theme, toggleTheme } = useTheme();
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
   }, []);
 
-  useEffect(() => {
-    if (isMounted) {
-      const savedTheme = localStorage.getItem("theme");
-      if (savedTheme) {
-        setIsDarkMode(savedTheme === "dark");
-      }
-    }
-  }, [isMounted]);
-
-  useEffect(() => {
-    if (isMounted) {
-      if (isDarkMode) {
-        document.documentElement.classList.add("dark");
-        localStorage.setItem("theme", "dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-        localStorage.setItem("theme", "light");
-      }
-    }
-  }, [isDarkMode]);
-
-  const toggleDarkMode = () => {
-    setIsDarkMode((prevMode) => !prevMode);
-  };
-
   if (!isMounted) {
     return null;
   }
 
   return (
-    <div className="relative  z-1000">
+    <div className="relative z-1000">
       <label className="toggle dark:bg-white bg-slate-900" htmlFor="switch">
         <input
           id="switch"
           className="input"
           type="checkbox"
-          checked={isDarkMode}
-          onChange={toggleDarkMode}
+          checked={theme === "dark"}
+          onChange={toggleTheme}
         />
         <div className="icon icon--moon">
           <svg

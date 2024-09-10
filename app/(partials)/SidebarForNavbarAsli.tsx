@@ -7,23 +7,25 @@ import FlipText from "@/components/ui/text-flip";
 import DarkModeToggle from "../(partials)/buttondarkmode";
 
 const SidebarForNavbarAsli = () => {
-  // State to toggle sidebar
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeLink, setActiveLink] = useState("");
 
-  // Toggle sidebar visibility
+  // UseEffect to get active link based on window.location
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setActiveLink(window.location.pathname);
+      console.log(window.location.pathname);
+    }
+  }, []); // Runs only once when the component is mounted
+
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
-  // Detect scroll position
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -44,36 +46,43 @@ const SidebarForNavbarAsli = () => {
       <motion.div
         initial={{
           opacity: 1,
-          y: 0, // Initial position when not scrolled
+          y: 0,
         }}
         animate={{
-          y: isScrolled ? -100 : 0, // Move up when scrolled
-          opacity: isScrolled ? 0 : 1, // Reduce opacity as it moves up
+          y: isScrolled ? -100 : 0,
+          opacity: isScrolled ? 0 : 1,
         }}
         exit={{
           opacity: 0,
-          y: -100, // Move up as it disappears
+          y: -100,
         }}
         transition={{
-          duration: 0.5, // Speed of the transition for the initial move up
+          duration: 0.5,
+          ease: "easeInOut",
         }}
       />
+
       <motion.div
         key={isScrolled ? "scrolled" : "notScrolled"}
         initial={{
-          y: -100, // Hidden above the viewport
-          opacity: 0, // Invisible
+          y: -100,
+          opacity: 0,
         }}
         animate={{
-          y: 0, // Drop down into view
-          opacity: 1, // Fade in
+          y: 0,
+          opacity: 1,
+        }}
+        exit={{
+          y: -100,
+          opacity: 0,
         }}
         transition={{
-          duration: 0.8, // Drop-down animation duration
-          delay: 0.2, // Small delay to create the separation effect
+          duration: 0.8,
+          ease: "easeInOut",
+          delay: 0.2,
         }}
         className={cn(
-          "transition-all duration-800 ease-linear py-2 bg-white/30 backdrop-blur",
+          "transition-all ease-linear py-2 bg-black/30 backdrop-blur",
           isScrolled
             ? "w-full lg:flex lg:max-w-fit fixed lg:top-5 lg:inset-x-0 lg:mx-auto border-none border-transparent dark:border-white/[0.2] lg:rounded-full backdrop-blur dark:bg-black/50 bg-white/30 lg:shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] lg:pr-2 lg:pl-8 lg:py-2 lg:items-center lg:justify-center lg:space-x-4"
             : "py-2 mb-2 border-none z-10 w-full fixed"
@@ -81,7 +90,7 @@ const SidebarForNavbarAsli = () => {
       >
         <div className="mx-auto max-w-9xl  lg:px-3">
           <div className="w-full flex flex-col lg:flex-row">
-            <div className="flex justify-between items-center  flex-row w-full">
+            <div className="flex justify-between items-center  flex-row w-full space-x-10">
               {/* Logo on the left */}
               <div className="bg-orange-50 rounded-lg w-12 h-12 flex items-center justify-center mr-3 ml-4 space-x-3">
                 <svg
@@ -104,28 +113,34 @@ const SidebarForNavbarAsli = () => {
               </div>
 
               {/* Links in the center */}
-              <ul className="hidden lg:flex items-center justify-between space-x-10 margin-auto">
+              <ul className="hidden lg:flex items-center justify-between margin-auto space-x-10">
                 {links.map((link) => (
                   <li key={link.label}>
-                    <a
-                      href={link.href}
-                      className="text-gray-500 text-base lg:text-base font-medium hover:text-indigo-700 transition-all duration-500"
+                    <motion.div
+                      whileHover={{ scale: 1.5, x: 5 }}
+                      whileTap={{ scale: 0.9 }}
                     >
-                      <FlipText
-                        word={link.label}
-                        className=" space-x-0 font-bold tracking-[-0.1em] text-[#229799] dark:text-white"
-                      />
-                    </a>
+                      <a
+                        href={link.href}
+                        onClick={() => setActiveLink(link.href)}
+                      >
+                        <FlipText
+                          word={link.label}
+                          className={`space-x-0 font-bold tracking-[-0.1em]  ${activeLink === link.href ? "text-[#55fff1]" : "text-white"}`}
+                        />
+                      </a>
+                    </motion.div>
                   </li>
                 ))}
               </ul>
+
 
               {/* Buttons in the right corner */}
               <div className="hidden lg:flex items-center space-x-4 ml-3">
                 <button className="bg-indigo-50 text-[#48CFCB] rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 py-3 px-6 text-sm hover:bg-indigo-100">
                   Login
                 </button>
-                <button className="bg-[#48CFCB] text-white rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 py-3 px-6 text-sm hover:bg-indigo-700">
+                <button className="bg-[#48CFCB] text-white rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 py-3 px-6 text-sm hover:bg-[#6439FF]">
                   Sign up
                 </button>
                 <DarkModeToggle />
@@ -176,15 +191,20 @@ const SidebarForNavbarAsli = () => {
             <ul className="mt-6 space-y-4">
               {links.map((link) => (
                 <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="block text-gray-500 z-50 text-base font-medium hover:text-indigo-700"
+                  <motion.div
+                    whileHover={{ scale: 1.5, x: 5 }}
+                    whileTap={{ scale: 0.9 }}
                   >
-                    <FlipText
-                      word={link.label}
-                      className="text-2xl font-normal sm:font-bold text-left tracking-[-0.1em] text-black dark:text-white"
-                    />
-                  </a>
+                    <a
+                      href={link.href}
+                      onClick={() => setActiveLink(link.href)}
+                    >
+                      <FlipText
+                        word={link.label}
+                        className={`text-2xl font-normal sm:font-bold text-left tracking-[-0.1em]  ${activeLink === link.href ? "text-[#55fff1]" : "text-white"}`}
+                      />
+                    </a>
+                  </motion.div>
                 </li>
               ))}
             </ul>
@@ -195,7 +215,7 @@ const SidebarForNavbarAsli = () => {
             <button className="bg-indigo-50 text-indigo-600 rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 py-3 px-6 text-sm hover:bg-indigo-100">
               Login
             </button>
-            <button className="bg-indigo-600 text-white rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 py-3 px-6 text-sm hover:bg-indigo-700">
+            <button className="bg-indigo-600 text-white rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 py-3 px-6 text-sm hover:bg-[#6439FF]">
               Sign up
             </button>
           </div>

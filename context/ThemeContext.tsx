@@ -16,7 +16,7 @@ const getFromLocalStorage = (): string => {
     const value = localStorage.getItem("theme");
     return value || "light";
   }
-  return "light"; // Default value jika window tidak terdefinisi
+  return "light"; 
 };
 
 interface ThemeContextProviderProps {
