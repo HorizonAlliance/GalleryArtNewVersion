@@ -4,12 +4,12 @@ import React from 'react';
 
 export default function JoinUs () {
     return (
-        <section className="bg-white dark:bg-black 2xl:py-24 2xl:bg-gray-50 px-3 mb-3">
-            <div className="px-4 mx-auto bg-black max-w-7xl sm:px-6 lg:px-8 rounded-xl">
+        <section className=" 2xl:py-24 2xl:bg-gray-50 px-3 mb-5">
+            <div className="px-4 mx-auto bg-[#229799] dark:bg-black max-w-7xl sm:px-6 lg:px-8 rounded-xl">
                 <div className="py-10 sm:py-16 lg:py-24 2xl:pl-24">
                     <div className="grid items-center grid-cols-1 gap-y-8 lg:grid-cols-2 lg:gap-x-8 2xl:gap-x-20">
                         <div className="lg:order-2 2xl:-mr-24">
-                            <img className="w-full shadow-xl rounded-xl" src="https://media.istockphoto.com/id/1837151100/id/foto/plakat-kolase-seni-kontemporer-karya-seni-futuristik-dari-patung-antik-yunani-yang-dipotong.jpg?s=1024x1024&w=is&k=20&c=BiHXhPwry-8lOWUvPhBDYFhFZFemlstLLrrHx5bo6Xw=" alt="" />
+                            <img className="w-full shadow-xl rounded-xl" src="https://plus.unsplash.com/premium_photo-1682125139523-92d7def89cd1?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
                         </div>
 
                         <div className="lg:order-1">
