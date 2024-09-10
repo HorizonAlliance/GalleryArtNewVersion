@@ -29,9 +29,6 @@ const config = {
 	],
   prefix: "",
   theme: {
-    screens: {
-      sm: "568px"
-    },
     container: {
       center: true,
       padding: "2rem",
