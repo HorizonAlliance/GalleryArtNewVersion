@@ -7,22 +7,20 @@ import { ThemeProvider } from "../(partials)/ThemeProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: 'Auth',
-  description: 'SignUp In Gallery Arts',
-}
+  title: "Login & Register",
+  description: "SignUp In Gallery Arts",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
       <ThemeProvider>
-      <body className={inter.className}>
-        {children}
-      </body>
+        <body className={inter.className}>{children}</body>
       </ThemeProvider>
     </html>
-  )
+  );
 }
