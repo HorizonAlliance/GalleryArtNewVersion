@@ -6,19 +6,14 @@ import { cn } from "@/lib/utils";
 import BlurFade from "@/app/(partials)/BlurFade";
 import { VelocityScroll } from "@/app/(partials)/Velocity";
 import { Card, cards } from "@/app/(partials)/Card";
+import { Category, Categories } from "@/app/(partials)/CategoryCard";
+import { useRouter } from "next/navigation";
 
-// LayoutGrid component
-export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
-  const [selected, setSelected] = useState<Card | null>(null);
-  const [hovered, setHovered] = useState<number | null>(null); // State for hover
+// import { useRouter } from "next/router";
 
-  const handleClick = (card: Card) => {
-    setSelected(card);
-  };
-
-  const handleClose = () => {
-    setSelected(null);
-  };
+export const CategoryCard = ({ categories }: { categories: Category[] }) => {
+  const [hovered, setHovered] = useState<number | null>(null);
+  const router = useRouter();
 
   const handleMouseEnter = (index: number) => {
     setHovered(index);
@@ -28,69 +23,100 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
     setHovered(null);
   };
 
+  const handleCategoryClick = (category: Category) => {
+    router.push(`/Gallery/Category?category=${category.category}`);
+  };
+
   return (
-    <div className="w-full h-full p-10 grid grid-cols-1 md:grid-cols-3 max-w-7xl mx-auto gap-4 relative">
-      {cards.map((card, index) => (
-        <motion.div
-          key={card.id}
-          onClick={() => handleClick(card)}
-          onMouseEnter={() => handleMouseEnter(index)}
-          onMouseLeave={handleMouseLeave}
-          className={cn(
-            card.className,
-            "relative overflow-hidden rounded-lg transition-all duration-300 ease-out cursor-pointer",
-            hovered !== null && hovered !== index && "blur-sm scale-[0.98]" // Apply blur effect
-          )}
-          layoutId={`card-${card.id}`}
-        >
-          <ImageComponent card={card} />
-          <motion.div className="absolute inset-0 bg-transparent flex items-end py-8 px-4 transition-opacity duration-300 opacity-0 hover:opacity-100">
-            <div className="text-xl md:text-2xl font-medium bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-200">
-              {card.title}
-            </div>
+    <BlurFade delay={0.25 * 0.05} inView>
+      <div className="w-full h-full sm:h-80 grid grid-cols-2 md:grid-cols-5 max-w-7xl mx-auto gap-4 relative p-5 sm:p-0 sm:pt-10 sm:pb-10">
+        {categories.map((category, index) => (
+          <motion.div
+            key={category.id}
+            onMouseEnter={() => handleMouseEnter(index)}
+            onMouseLeave={handleMouseLeave}
+            onClick={() => handleCategoryClick(category)} // Tambahkan event onClick
+            className={cn(
+              "relative overflow-hidden rounded-lg transition-all duration-300 ease-out cursor-pointer",
+              hovered !== null && hovered !== index && "blur-sm scale-[0.98]"
+            )}
+            layoutId={`category-${category.id}`}
+          >
+            <ImageComponent category={category} />
+            <motion.div className="absolute inset-0 bg-transparent flex items-end py-8 px-4 transition-opacity duration-300 opacity-0 hover:opacity-100">
+              <div className="text-xl md:text-2xl font-medium bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-200"></div>
+            </motion.div>
           </motion.div>
-        </motion.div>
-      ))}
-      <AnimatePresence>
-        {selected && <Modal selected={selected} handleClose={handleClose} />}
-      </AnimatePresence>
-    </div>
+        ))}
+      </div>
+    </BlurFade>
   );
 };
 
-// Image component to display image
-const ImageComponent = ({ card }: { card: Card }) => {
+const ImageComponent = ({ category }: { category: Category }) => {
   return (
-    <div className="flex items-center justify-center h-full w-full bg-black text-white">
-      <p className="text-4xl sm:text-7xl font-bold text-center text-blue dark:text-white">
-        {card.category} {/* Tampilkan tulisan sebagai pengganti gambar */}
+    <div
+      className="relative flex items-center justify-center h-full w-full bg-cover bg-center"
+      style={{
+        backgroundImage: `url(${category.thumbnail})`,
+      }}
+    >
+      {/* Overlay hitam dengan transparansi */}
+      <div className="absolute inset-0 bg-black opacity-40"></div>
+
+      {/* Teks di atas gambar */}
+      <p className="relative z-10 text-1xl sm:text-2xl font-bold text-center text-white p-4">
+        {category.title}
       </p>
     </div>
-    // <motion.img
-    //   src={card.thumbnail}
-    //   height="500"
-    //   width="500"
-    //   className="object-cover object-top absolute inset-0 h-full w-full transition-transform duration-200 img-modal"
-    //   alt="thumbnail"
-    // />
   );
 };
 
-// Modal component
+export const Cards = () => {
+  const [selectedCard, setSelectedCard] = useState<Card | null>(null);
+
+  const handleCardClick = (card: Card) => {
+    setSelectedCard(card);
+  };
+
+  const handleClose = () => {
+    setSelectedCard(null);
+  };
+
+  return (
+    <section
+      id="photos"
+      className="w-full h-full grid grid-cols-1 max-w-7xl mx-auto relative p-5 sm:p-0 sm:pt-10 sm:pb-10"
+    >
+      <div className="columns-1 sm:columns-3">
+        {cards.map((card, idx) => (
+          <BlurFade key={card.thumbnail} delay={0.25 + idx * 0.05} inView>
+            <img
+              className="mb-4 size-full rounded-lg object-contain cursor-pointer"
+              src={card.thumbnail}
+              alt={card.title}
+              onClick={() => handleCardClick(card)}
+            />
+          </BlurFade>
+        ))}
+      </div>
+
+      <AnimatePresence>
+        {selectedCard && (
+          <Modal selected={selectedCard} handleClose={handleClose} />
+        )}
+      </AnimatePresence>
+    </section>
+  );
+};
+
 const Modal = ({
   selected,
   handleClose,
 }: {
-  selected: Card;
+  selected: Category;
   handleClose: () => void;
 }) => {
-  const [imageSize, setImageSize] = useState({ width: 0, height: 0 });
-
-  const handleImageLoad = (e: React.SyntheticEvent<HTMLImageElement>) => {
-    const img = e.currentTarget;
-    setImageSize({ width: img.naturalWidth, height: img.naturalHeight });
-  };
-
   return (
     <motion.div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75"
@@ -101,30 +127,31 @@ const Modal = ({
       onClick={handleClose}
     >
       <motion.div
-        className="relative bg-white rounded-lg overflow-hidden"
+        className="relative w-full max-w-4xl max-h-[90vh] bg-white rounded-lg overflow-hidden"
         onClick={(e) => e.stopPropagation()}
-        style={{
-          width:
-            imageSize.width > 0
-              ? `${Math.min(imageSize.width, window.innerWidth * 0.9)}px`
-              : "auto",
-          height:
-            imageSize.height > 0
-              ? `${Math.min(imageSize.height, window.innerHeight * 0.9)}px`
-              : "auto",
-        }}
         initial={{ scale: 0.9 }}
         animate={{ scale: 1 }}
         exit={{ scale: 0.9 }}
         transition={{ duration: 0.4, ease: "easeInOut" }}
       >
-        <img
-          src={selected.thumbnail}
-          alt="modal-thumbnail"
-          onLoad={handleImageLoad}
-          className="w-full h-auto"
-        />
-        <div className="p-8">{selected.content}</div>
+        {/* Gambar di bagian bawah */}
+        <div className="relative w-full h-auto" style={{ aspectRatio: "16/9" }}>
+          <Image
+            src={selected.thumbnail} // Pastikan URL gambar benar
+            alt={selected.title}
+            layout="fill"
+            objectFit="cover" // Agar gambar tidak terdistorsi
+            className="rounded-t-lg"
+          />
+          {/* Konten teks di atas gambar */}
+          <div className="absolute w-full inset-0 flex items-end justify-start">
+            <div className="w-full p-4 bg-gradient-to-t from-black to-transparent">
+              <p className="text-white text-sm">{selected.content}</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Tombol close di pojok kanan atas */}
         <button
           className="absolute top-4 right-4 text-white bg-black rounded-full p-2"
           onClick={handleClose}
@@ -136,47 +163,20 @@ const Modal = ({
   );
 };
 
-export function BlurFadeDemo() {
+export function GalleryCard() {
   return (
-    <section
-      id="photos"
-      className="w-full h-full p-10 grid grid-cols-1 max-w-7xl mx-auto relative"
-    >
-      <div className="columns-3 sm:columns-3">
-        {cards.map((card, idx) => (
-          <BlurFade key={card.thumbnail} delay={0.25 + idx * 0.05} inView>
-            <img
-              className="mb-4 size-full rounded-lg object-contain"
-              src={card.thumbnail}
-              alt={card.title}
-            />
-          </BlurFade>
-        ))}
+    <div className="h-full w-full">
+      <div className="h-auto">
+        <CategoryCard categories={Categories} />
       </div>
-    </section>
-  );
-}
-// photos 2
-
-export function LayoutGridDemo() {
-  return (
-    <div className="h-full py-20 w-full">
-      <VelocityScroll
-        text="CATEGORY"
-        default_velocity={2}
-        className="font-display text-center text-7xl font-bold tracking-[-0.02em] text-black drop-shadow-sm dark:text-white md:text-7xl md:leading-[5rem]"
-      />
-      <div className="h-screen">
-        <LayoutGrid cards={cards} />
-      </div>
-
-      <VelocityScroll
-        text="GALLERY"
-        default_velocity={2}
-        className="font-display text-center text-7xl font-bold tracking-[-0.02em] text-black drop-shadow-sm dark:text-white md:text-7xl md:leading-[5rem]"
-      />
-
-      <BlurFadeDemo />
+      <BlurFade delay={0.25 * 0.05} inView>
+        <VelocityScroll
+          text="GALLERY"
+          default_velocity={2}
+          className="font-display text-center text-3xl font-bold tracking-[-0.02em] text-black drop-shadow-sm dark:text-white md:text-5xl md:leading-[5rem]"
+        />
+      </BlurFade>
+      <Cards />
     </div>
   );
 }

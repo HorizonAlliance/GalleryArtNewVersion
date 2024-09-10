@@ -7,7 +7,7 @@ type Props = {};
 const page = (props: Props) => {
   return (
     <>
-      <div className="h-screen bg-[#e6f429] dark:bg-black">
+      <div className="h-screen  dark:bg-black">
         <SparklesPreview />
         <Footer />
       </div>
