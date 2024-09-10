@@ -1,9 +1,9 @@
-/* From Uiverse.io by Creatlydev */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
 .toggle {
-    background-color: #fff;
     width: 56px;
     height: 56px;
     border-radius: 50%;
@@ -26,10 +26,12 @@
 
 .icon--moon {
     transition-delay: 200ms;
+    color: rgb(255, 255, 255);
 }
 
 .icon--sun {
     transform: scale(0);
+    color: rgb(0, 0, 0);
 }
 
 #switch:checked+.icon--moon {

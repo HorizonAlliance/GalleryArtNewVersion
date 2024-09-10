@@ -35,12 +35,12 @@ const DarkModeToggle = () => {
   };
 
   if (!isMounted) {
-    return null; 
+    return null;
   }
 
   return (
     <div className="relative  z-1000">
-      <label className="toggle" htmlFor="switch">
+      <label className="toggle dark:bg-white bg-slate-900" htmlFor="switch">
         <input
           id="switch"
           className="input"
