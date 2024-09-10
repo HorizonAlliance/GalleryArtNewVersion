@@ -10,7 +10,7 @@
     display: grid;
     place-items: center;
     cursor: pointer;
-    box-shadow: 0 0 50px 20px rgba(0, 0, 0, .1);
+    box-shadow: 0 0 60px 8px rgba(103, 89, 255, 0.1);
     line-height: 1;
 }
 

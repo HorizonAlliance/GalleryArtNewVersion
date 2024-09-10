@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .button {
-    margin: 0;
+    margin-top: 10;
     height: auto;
     background: transparent;
     padding: 0;
@@ -14,8 +14,8 @@
   /* button styling */
   .button {
     --border-right: 6px;
-    --text-stroke-color: #A2CA71;
-    --animation-color: #e6f429;
+    --text-stroke-color: #229799;
+    --animation-color: #48CFCB;
     --fs-size: 2em;
     letter-spacing: 3px;
     text-decoration: none;

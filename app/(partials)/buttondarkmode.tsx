@@ -39,7 +39,7 @@ const DarkModeToggle = () => {
   }
 
   return (
-    <div className="relative m-2  z-1000">
+    <div className="relative  z-1000">
       <label className="toggle" htmlFor="switch">
         <input
           id="switch"

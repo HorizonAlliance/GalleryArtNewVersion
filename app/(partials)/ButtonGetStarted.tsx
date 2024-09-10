@@ -10,7 +10,7 @@ export default function ButtonGetStarted() {
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="button mt-6"
+      className="button mt-10"
     >
       <span className="actual-text">&nbsp;get&nbsp;started&nbsp;</span>
       <span aria-hidden="true" className="hover-text">
