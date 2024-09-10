@@ -35,7 +35,7 @@ const DarkModeToggle = () => {
   };
 
   if (!isMounted) {
-    return null; 
+    return null;
   }
 
   return (
