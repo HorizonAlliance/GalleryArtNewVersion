@@ -91,7 +91,7 @@ export function VelocityScroll({
 
     return (
       <div
-        className="w-full bg-[#e6f429] grid grid-cols-1 max-w-6xl mx-auto gap-4 relative overflow-hidden whitespace-nowrap"
+        className="w-full h-full bg-[#48CFCB] grid grid-cols-1 max-w-7xl mx-auto gap-4 relative overflow-hidden whitespace-nowrap"
         ref={containerRef}
       >
         <motion.div className={cn("inline-block", className)} style={{ x }}>
