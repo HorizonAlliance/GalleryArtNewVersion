@@ -2,6 +2,7 @@
 const nextConfig = {
   images: {
     domains: [
+      "pagedone.io",
       "plus.unsplash.com",
       "aceternity.com",
       "assets.aceternity.com",
