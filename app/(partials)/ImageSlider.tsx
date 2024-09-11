@@ -61,7 +61,7 @@ const GallerySection: React.FC = () => {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 overflow-hidden">
         <motion.div variants={itemVariants} className="pb-16">
           <h2 className="w-full text-center text-gray-900 text-4xl font-bold font-manrope leading-loose pb-2.5">Our Gallery</h2>
-          <p className="w-full text-center text-gray-600 text-lg font-normal leading-8">Explore the essence of beauty in our gallery's intimate space.</p>
+          <p className="w-full text-center text-gray-600 text-lg font-normal leading-8">Explore the essence of beauty in our gallery&aposs intimate space.</p>
         </motion.div>
         
         <div className="mx-auto w-auto relative">
