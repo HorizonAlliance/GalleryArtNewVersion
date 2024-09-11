@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { Card, cards } from "@/app/(partials)/Card";
 import { CategoryName } from "@/app/(partials)/TextBlur";
@@ -26,40 +26,41 @@ const CategoryPage = () => {
 
   return (
     <>
-      <section
-        id="photos"
-        className="w-full h-full grid grid-cols-1 max-w-7xl mx-auto relative p-5 sm:p-0 sm:pt-10 sm:pb-10"
-      >
-        <CategoryName category={category} />
+      <Suspense fallback={<div>Loading...</div>}>
+        <section
+          id="photos"
+          className="w-full h-full grid grid-cols-1 max-w-7xl mx-auto relative p-5 sm:p-0 sm:pt-10 sm:pb-10"
+        >
+          <CategoryName category={category} />
 
-        {filteredCards.length > 0 ? (
-          <div className="columns-1 sm:columns-3">
-            {filteredCards.map((card, idx) => (
-              <BlurFade key={card.id} delay={0.25 + idx * 0.05} inView>
-                <img
-                  className="mb-4 size-full rounded-lg object-contain cursor-pointer"
-                  src={card.thumbnail}
-                  alt={card.title}
-                  onClick={() => handleCardClick(card)}
-                />
-              </BlurFade>
-            ))}
-          </div>
-        ) : (
-          // Menampilkan pesan "Not Found" jika tidak ada card
-          <BlurFade delay={0.25 * 0.05} inView>
-            <div className="flex justify-center items-center h-64">
-              <h2 className="text-xl font-bold text-black">Not Found</h2>
+          {filteredCards.length > 0 ? (
+            <div className="columns-1 sm:columns-3">
+              {filteredCards.map((card, idx) => (
+                <BlurFade key={card.id} delay={0.25 + idx * 0.05} inView>
+                  <img
+                    className="mb-4 size-full rounded-lg object-contain cursor-pointer"
+                    src={card.thumbnail}
+                    alt={card.title}
+                    onClick={() => handleCardClick(card)}
+                  />
+                </BlurFade>
+              ))}
             </div>
-          </BlurFade>
-        )}
-
-        <AnimatePresence>
-          {selectedCard && (
-            <Modal selected={selectedCard} handleClose={handleClose} />
+          ) : (
+            <BlurFade delay={0.25 * 0.05} inView>
+              <div className="flex justify-center items-center h-64">
+                <h2 className="text-xl font-bold text-black">Not Found</h2>
+              </div>
+            </BlurFade>
           )}
-        </AnimatePresence>
-      </section>
+
+          <AnimatePresence>
+            {selectedCard && (
+              <Modal selected={selectedCard} handleClose={handleClose} />
+            )}
+          </AnimatePresence>
+        </section>
+      </Suspense>
     </>
   );
 };
