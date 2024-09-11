@@ -189,35 +189,14 @@ const AboutPage = (props: Props) => {
           >
             <div className="relative w-full text-center lg:text-left lg:w-2/4">
               <h2 className="text-4xl font-bold text-gray-900 leading-[3.25rem] lg:mb-6 mx-auto max-w-max lg:max-w-md lg:mx-0 dark:text-white">
-                Enjoy the finest features with our products
+                Enjoy the world of arts with this website
               </h2>
             </div>
             <div className="relative w-full text-center  lg:text-left lg:w-2/4">
               <p className="text-lg font-normal text-gray-500 mb-5">
-                We provide all the advantages that can simplify all your
-                financial transactions without any further requirements
+                We display any style of arts. Many artists can be found here,
+                choose who you like! This is world of arts.
               </p>
-              <a
-                href="#"
-                className="flex flex-row items-center justify-center gap-2 text-base font-semibold text-[#27babd] lg:justify-start hover:text-[#229799] "
-              >
-                Button CTA{" "}
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M7.5 15L11.0858 11.4142C11.7525 10.7475 12.0858 10.4142 12.0858 10C12.0858 9.58579 11.7525 9.25245 11.0858 8.58579L7.5 5"
-                    stroke="#229799"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  ></path>
-                </svg>
-              </a>
             </div>
           </motion.div>
           <motion.div
@@ -244,11 +223,10 @@ const AboutPage = (props: Props) => {
                 </svg>
               </div>
               <h4 className="text-xl font-semibold text-gray-900 mb-3 capitalize transition-all duration-500 group-hover:text-white">
-                Easy Payment
+                Various Arts
               </h4>
               <p className="text-sm font-normal text-gray-500 transition-all duration-500 leading-5 group-hover:text-white">
-                We Provide Various Methods For You To Carry Out All Transactions
-                Related To Your Finances
+                We Provide Various Arts For You To Enjoy the Finest Art.
               </p>
             </div>
             <div className="group relative w-full bg-gray-100 rounded-2xl p-4 transition-all duration-500 max-md:max-w-md max-md:mx-auto md:w-2/5 md:h-64 xl:p-7 xl:w-1/4 hover:bg-[#229799]">
@@ -270,11 +248,11 @@ const AboutPage = (props: Props) => {
                 </svg>
               </div>
               <h4 className="text-xl font-semibold text-gray-900 mb-3 capitalize transition-all duration-500 group-hover:text-white">
-                Safe Transaction
+                Rich of Styles
               </h4>
               <p className="text-sm font-normal text-gray-500 transition-all duration-500 leading-5 group-hover:text-white">
-                We have the most up-to-date security to support the security of
-                all our customers in carrying out all transactions.
+                We have the most up-to-date styles of the any art for you.
+                Discover what you like!
               </p>
             </div>
             <div className="group relative w-full bg-gray-100 rounded-2xl p-4 transition-all duration-500 max-md:max-w-md max-md:mx-auto md:w-2/5 md:h-64 xl:p-7 xl:w-1/4 hover:bg-[#229799]">
@@ -296,11 +274,11 @@ const AboutPage = (props: Props) => {
                 </svg>
               </div>
               <h4 className="text-xl font-semibold text-gray-900 mb-3 capitalize transition-all duration-500 group-hover:text-white">
-                Fast Customer Service{" "}
+                Fast Services{" "}
               </h4>
               <p className="text-sm font-normal text-gray-500 transition-all duration-500 leading-5 group-hover:text-white">
-                Provide Customer Service For Those Of You Who Have Problems 24
-                Hours A Week
+                If there any bug or problem, you can contact us. We will handle
+                it as fast as we can.
               </p>
             </div>
             <div className="group relative w-full bg-gray-100 rounded-2xl p-4 transition-all duration-500 max-md:max-w-md max-md:mx-auto md:w-2/5 md:h-64 xl:p-7 xl:w-1/4 hover:bg-[#229799]">
@@ -322,11 +300,11 @@ const AboutPage = (props: Props) => {
                 </svg>
               </div>
               <h4 className="text-xl font-semibold text-gray-900 mb-3 capitalize transition-all duration-500 group-hover:text-white">
-                Quick Transaction
+                Trusted by Artists
               </h4>
               <p className="text-sm font-normal text-gray-500 transition-all duration-500 leading-5 group-hover:text-white">
-                We provide faster transaction speeds than competitors, so money
-                arrives and is received faster.
+                This website is trusted by many artists. You can find them here
+                or be the one of them.
               </p>
             </div>
           </motion.div>

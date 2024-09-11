@@ -101,13 +101,11 @@ export default function Profile() {
               />
               <div className="absolute z-10 bottom-3 left-0 mx-3 p-3 bg-white w-[calc(100%-24px)] rounded-xl shadow-sm shadow-transparent transition-all duration-500 group-hover:shadow-indigo-200 group-hover:bg-[#48CFCB]">
                 <div className="flex items-center justify-between mb-2">
-                  <h6 className="font-semibold text-base leading-7 text-[#424242] ">
+                  <h6 className="font-semibold text-base leading-7 text-[#424242]">
                     Tiger notes paper moon stars
                   </h6>
                 </div>
-                <p className="text-xs leading-5 text-gray-500">
-                  Animal
-                </p>
+                <p className="text-xs leading-5 text-gray-500">Animal</p>
               </div>
             </a>
             <a
@@ -165,7 +163,7 @@ export default function Profile() {
               <div className="absolute z-10 bottom-3 left-0 mx-3 p-3 bg-white w-[calc(100%-24px)] rounded-xl shadow-sm shadow-transparent transition-all duration-500 group-hover:shadow-indigo-200 group-hover:bg-[#48CFCB]">
                 <div className="flex items-center justify-between mb-2">
                   <h6 className="font-semibold text-base leading-7 text-[#424242] ">
-                  Fox
+                    Fox
                   </h6>
                 </div>
                 <p className="text-xs leading-5 text-gray-500">Animal</p>
