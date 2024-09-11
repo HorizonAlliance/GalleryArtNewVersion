@@ -77,7 +77,7 @@ const SidebarForNavbarAsli = () => {
           opacity: 0,
         }}
         transition={{
-          duration: 0.5,
+          duration: 0.8,
           ease: "easeInOut",
           delay: 0.2,
         }}
@@ -93,31 +93,31 @@ const SidebarForNavbarAsli = () => {
             <div className="flex justify-between items-center  flex-row w-full space-x-10">
               {/* Logo on the left */}
               <div className="flex items-center justify-center">
-                <div className="bg-orange-50 rounded-lg w-12 h-12 flex items-center justify-center mr-3 ml-4 space-x-3">
-                  <svg
-                    width="38"
-                    height="38"
-                    viewBox="0 0 38 38"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      opacity="0.3"
-                      d="M23.75 16.625C23.75 15.3133 22.6867 14.25 21.375 14.25H7.125C5.81332 14.25 4.75 15.3133 4.75 16.625V30.875C4.75 32.1867 5.81332 33.25 7.125 33.25H21.375C22.6867 33.25 23.75 32.1867 23.75 30.875V16.625Z"
-                      fill="#48CFCB"
-                    ></path>
-                    <path
-                      d="M12.6665 15.0417C12.6665 20.7256 17.2742 25.3333 22.9582 25.3333C28.6421 25.3333 33.2498 20.7256 33.2498 15.0417C33.2498 9.35774 28.6421 4.75 22.9582 4.75C17.2742 4.75 12.6665 9.35774 12.6665 15.0417Z"
-                      fill="#48CFCB"
-                    ></path>
-                  </svg>
-                </div>
-                <div className="mr-3 ml-4">
-                  <p className="text-3xl md:text-4xl font-extrabold text-white">
-                    Gallery <span className="text-[#04e0cd]">Arts</span>
-                  </p>
-                </div>
-              </div>
+            <div className="bg-orange-50 rounded-lg w-12 h-12 flex items-center justify-center mr-3 ml-4 space-x-3">
+              <svg
+                width="38"
+                height="38"
+                viewBox="0 0 38 38"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  opacity="0.3"
+                  d="M23.75 16.625C23.75 15.3133 22.6867 14.25 21.375 14.25H7.125C5.81332 14.25 4.75 15.3133 4.75 16.625V30.875C4.75 32.1867 5.81332 33.25 7.125 33.25H21.375C22.6867 33.25 23.75 32.1867 23.75 30.875V16.625Z"
+                  fill="#48CFCB"
+                ></path>
+                <path
+                  d="M12.6665 15.0417C12.6665 20.7256 17.2742 25.3333 22.9582 25.3333C28.6421 25.3333 33.2498 20.7256 33.2498 15.0417C33.2498 9.35774 28.6421 4.75 22.9582 4.75C17.2742 4.75 12.6665 9.35774 12.6665 15.0417Z"
+                  fill="#48CFCB"
+                ></path>
+              </svg>
+            </div>
+            <div className="mr-3 ml-4">
+              <p className="text-2xl md:text-4xl font-extrabold text-white">
+                Gallery <span className="text-[#1cd1c2]">Arts</span>
+              </p>
+            </div>
+          </div>
 
               {/* Links in the center */}
               <ul className="hidden lg:flex items-center justify-between margin-auto space-x-10">
@@ -133,11 +133,7 @@ const SidebarForNavbarAsli = () => {
                       >
                         <FlipText
                           word={link.label}
-                          className={`space-x-0 font-bold tracking-[-0.1em]  ${
-                            activeLink === link.href
-                              ? "text-[#55fff1]"
-                              : "text-white"
-                          }`}
+                          className={`space-x-0 font-bold tracking-[-0.1em]  ${activeLink === link.href ? "text-[#55fff1]" : "text-white"}`}
                         />
                       </a>
                     </motion.div>
@@ -145,18 +141,15 @@ const SidebarForNavbarAsli = () => {
                 ))}
               </ul>
 
+
               {/* Buttons in the right corner */}
               <div className="hidden lg:flex items-center space-x-4 ml-3">
-                <a href="/Login">
-                  <button className="bg-indigo-50 text-[#48CFCB] rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 py-3 px-6 text-sm hover:bg-indigo-100">
-                    Login
-                  </button>
-                </a>
-                <a href="/Register">
-                  <button className="bg-[#48CFCB] text-white rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 py-3 px-6 text-sm hover:bg-[#ffff] hover:text-black">
-                    Sign up
-                  </button>
-                </a>
+                <button className="bg-indigo-50 text-[#48CFCB] rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 py-3 px-6 text-sm hover:bg-indigo-100">
+                  Login
+                </button>
+                <button className="bg-[#48CFCB] text-white rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 py-3 px-6 text-sm hover:bg-[#6439FF]">
+                  Sign up
+                </button>
                 <DarkModeToggle />
               </div>
 
@@ -215,11 +208,7 @@ const SidebarForNavbarAsli = () => {
                     >
                       <FlipText
                         word={link.label}
-                        className={`text-2xl font-normal sm:font-bold text-left tracking-[-0.1em]  ${
-                          activeLink === link.href
-                            ? "text-[#55fff1]"
-                            : "text-black"
-                        }`}
+                        className={`text-2xl font-normal sm:font-bold text-left tracking-[-0.1em]  ${activeLink === link.href ? "text-[#55fff1]" : "text-white"}`}
                       />
                     </a>
                   </motion.div>
@@ -230,16 +219,12 @@ const SidebarForNavbarAsli = () => {
 
           {/* Buttons inside Sidebar */}
           <div className="flex flex-col items-center space-y-4 mt-6">
-            <a href="/Login">
-              <button className="bg-indigo-50 text-[#34a097] rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 py-3 px-6 text-sm hover:bg-slate-500 hover:text-white">
-                Logins
-              </button>
-            </a>
-            <a href="/Register">
-              <button className="bg-[#34a097] text-white  rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 py-3 px-6 text-sm hover:bg-[#1d4249]">
-                Sign up
-              </button>
-            </a>
+            <button className="bg-indigo-50 text-indigo-600 rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 py-3 px-6 text-sm hover:bg-indigo-100">
+              Login
+            </button>
+            <button className="bg-indigo-600 text-white rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 py-3 px-6 text-sm hover:bg-[#6439FF]">
+              Sign up
+            </button>
           </div>
           <div className="absolute bottom-16 left-2 z-40 bg-black p-1 rounded-full">
             <DarkModeToggle />
