@@ -4,7 +4,6 @@ import "../globals.css";
 import { ThemeProvider } from "@/context/ThemeProvider";
 import SidebarForNavbarAsli from "../(partials)/SidebarForNavbarAsli";
 
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -21,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <ThemeProvider>
         <body className={inter.className}>
-          <SidebarForNavbarAsli/>
+          <SidebarForNavbarAsli />
           {children}
         </body>
       </ThemeProvider>
