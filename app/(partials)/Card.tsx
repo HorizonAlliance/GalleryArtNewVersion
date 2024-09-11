@@ -22,7 +22,7 @@ export const cards: Card[] = [
       </div>
     ),
     className: "md:col-span-2",
-    category: "Abstract",
+    category: "Fantasy",
 
     // thumbnail:
     thumbnail: "/assets/img/Tiger notes paper moon stars -MollyRoselee.jpg",
@@ -33,7 +33,7 @@ export const cards: Card[] = [
     content: (
       <div>
         <p className="font-bold md:text-4xl text-xl text-white">
-          House above the clouds
+          Nature art landscape mountain
         </p>
         <p className="font-normal text-base max-w-lg text-neutral-200">
           Created by Wafidnside
@@ -41,9 +41,9 @@ export const cards: Card[] = [
       </div>
     ),
     className: "col-span-1",
-    category: "Abstract",
+    category: "Moon",
     thumbnail: "/assets/img/Nature art landscape mountain - Wafidnside.jpg",
-    title: "House Above the Clouds",
+    title: "Nature art landscape mountain",
   },
   {
     id: 3,
@@ -58,47 +58,79 @@ export const cards: Card[] = [
       </div>
     ),
     className: "col-span-1",
-    category: "ANJAY",
+    category: "Person",
     thumbnail:
       "/assets/img/Woman face grunge drawing line art - BiancaVandijk.jpg",
-    title: "Greens All Over",
+    title: "Woman face grunge drawing line art",
   },
   {
     id: 4,
     content: (
       <div>
         <p className="font-bold md:text-4xl text-xl text-white">
-          Rivers are serene
+          AI generated girl rain child
         </p>
-        <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-          A house by the river is a place of peace and tranquility.
+        <p className="font-normal text-base max-w-lg text-neutral-200">
+          Created by Jhollu7
         </p>
       </div>
     ),
-    className: "md:col-span-2",
-    category: "ANJAY",
-    thumbnail:
-      "https://images.unsplash.com/photo-1475070929565-c985b496cb9f?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    title: "Rivers Are Serene",
+    className: "col-span-1",
+    category: "AI",
+    thumbnail: "/assets/img/AI generated girl rain child - Jhollu7.jpg",
+    title: "AI generated girl rain child",
   },
   {
-    id: 1,
+    id: 5,
     content: (
       <div>
         <p className="font-bold md:text-4xl text-xl text-white">
-          House in the woods
+          Amber nature water architecture
         </p>
-        <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-          A serene and tranquil retreat, this house in the woods offers a
-          peaceful escape from the hustle and bustle of city life.
+        <p className="font-normal text-base max-w-lg text-neutral-200">
+          Created by designtrickacademy
         </p>
       </div>
     ),
-    className: "md:col-span-2",
-    category: "MANGA",
-    // thumbnail:
+    className: "col-span-1",
+    category: "Abstract",
     thumbnail:
-      "https://images.unsplash.com/photo-1476231682828-37e571bc172f?q=80&w=3474&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    title: "House in the Woods",
+      "/assets/img/Amber nature water architecture -designtrickacademy.jpg",
+    title: "Amber nature water architecture",
+  },
+  {
+    id: 7,
+    content: (
+      <div>
+        <p className="font-bold md:text-4xl text-xl text-white">
+          Background bohemian painting boho
+        </p>
+        <p className="font-normal text-base max-w-lg text-neutral-200">
+          Created by BiancaVanDijk
+        </p>
+      </div>
+    ),
+    className: "col-span-1",
+    category: "Abstract",
+    thumbnail:
+      "/assets/img/Background bohemian painting boho - BiancaVanDijk.jpg",
+    title: "Background bohemian painting boho",
+  },
+  {
+    id: 6,
+    content: (
+      <div>
+        <p className="font-bold md:text-4xl text-xl text-white">
+          Background abstract wallpaper
+        </p>
+        <p className="font-normal text-base max-w-lg text-neutral-200">
+          Created by Annomaria
+        </p>
+      </div>
+    ),
+    className: "col-span-1",
+    category: "Abstract",
+    thumbnail: "/assets/img/Background abstract wallpaper - Annomaria.jpg",
+    title: "Background abstract wallpaper",
   },
 ];
