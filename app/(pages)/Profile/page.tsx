@@ -2,6 +2,8 @@
 
 import Footer from "@/app/(partials)/Footer";
 import { motion } from "framer-motion";
+import Image from "next/image";
+
 
 export default function Profile() {
   return (
@@ -22,40 +24,36 @@ export default function Profile() {
           </div>
           <div className="flex flex-col sm:flex-row max-sm:gap-5 items-center justify-between mb-5">
             <div className="block">
-              <h3 className="font-manrope font-bold text-4xl text-gray-900 mb-1">
+              <h3 className="font-manrope font-bold text-4xl text-gray-900 mb-1 dark:text-white">
                 Jhon Doeeee
               </h3>
-              <p className="font-normal text-base leading-7 text-gray-500">
-                marssssssssss
+              <p className="font-normal text-base leading-7 text-gray-400">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil,
+                porro!
               </p>
             </div>
-            <button className="rounded-full py-3.5 px-5 bg-gray-100 flex items-center group transition-all duration-500 hover:bg-indigo-100 ">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-              >
-                <path
+            <button className="rounded-full py-3.5 px-5 bg-gray-100 flex items-center group transition-all duration-500 hover:bg-[#48CFCB]">
                   className="stroke-gray-700 transition-all duration-500 group-hover:stroke-indigo-600"
                   d="M14.1667 11.6666V13.3333C14.1667 14.9046 14.1667 15.6903 13.6785 16.1785C13.1904 16.6666 12.4047 16.6666 10.8333 16.6666H7.50001C5.92866 16.6666 5.14299 16.6666 4.65483 16.1785C4.16668 15.6903 4.16668 14.9047 4.16668 13.3333V11.6666M16.6667 9.16663V13.3333M11.0157 10.434L12.5064 9.44014C14.388 8.18578 15.3287 7.55861 15.3287 6.66663C15.3287 5.77466 14.388 5.14749 12.5064 3.89313L11.0157 2.8993C10.1194 2.3018 9.67131 2.00305 9.16668 2.00305C8.66205 2.00305 8.21393 2.3018 7.31768 2.8993L5.82693 3.89313C3.9454 5.14749 3.00464 5.77466 3.00464 6.66663C3.00464 7.55861 3.9454 8.18578 5.82693 9.44014L7.31768 10.434C8.21393 11.0315 8.66205 11.3302 9.16668 11.3302C9.67131 11.3302 10.1194 11.0315 11.0157 10.434Z"
                   stroke="#374151"
+                  className="stroke-gray-700 transition-all duration-500 group-hover:stroke-[#F5F5F5]"
+                  d="M14.1667 11.6666V13.3333C14.1667 14.9046 14.1667 15.6903 13.6785 16.1785C13.1904 16.6666 12.4047 16.6666 10.8333 16.6666H7.50001C5.92866 16.6666 5.14299 16.6666 4.65483 16.1785C4.16668 15.6903 4.16668 14.9047 4.16668 13.3333V11.6666M16.6667 9.16663V13.3333M11.0157 10.434L12.5064 9.44014C14.388 8.18578 15.3287 7.55861 15.3287 6.66663C15.3287 5.77466 14.388 5.14749 12.5064 3.89313L11.0157 2.8993C10.1194 2.3018 9.67131 2.00305 9.16668 2.00305C8.66205 2.00305 8.21393 2.3018 7.31768 2.8993L5.82693 3.89313C3.9454 5.14749 3.00464 5.77466 3.00464 6.66663C3.00464 7.55861 3.9454 8.18578 5.82693 9.44014L7.31768 10.434C8.21393 11.0315 8.66205 11.3302 9.16668 11.3302C9.67131 11.3302 10.1194 11.0315 11.0157 10.434Z"
+                  stroke="#F5F5F5"
                   stroke-width="1.6"
                   stroke-linecap="round"
                 />
               </svg>
-              <span className="px-2 font-medium text-base leading-7 text-gray-700 transition-all duration-500 group-hover:text-indigo-600">
+              <span className="px-2 font-medium text-base leading-7 text-gray-700 transition-all duration-500 group-hover:text-[#F5F5F5]">
                 Software Engineer
               </span>
             </button>
           </div>
           <div className="flex flex-col lg:flex-row max-lg:gap-5 items-center justify-between py-0.5">
             <div className="flex items-center gap-4">
-              <button className="py-3.5 px-5 rounded-full bg-indigo-600 text-white font-semibold text-base leading-7 shadow-sm shadow-transparent transition-all duration-500 hover:shadow-gray-100 hover:bg-indigo-700">
+              <button className="py-3.5 px-5 rounded-full bg-[#48CFCB] text-white font-semibold text-base leading-7 shadow-sm shadow-transparent transition-all duration-500 hover:bg-[#229799]">
                 Edit Profile
               </button>
-              <button className="py-3.5 px-5 rounded-full bg-indigo-50 text-indigo-600 font-semibold text-base leading-7 shadow-sm shadow-transparent transition-all duration-500 hover:bg-indigo-100">
+              <button className="py-3.5 px-5 rounded-full bg-[#F5F5F5] text-[#229799] font-semibold text-base leading-7 shadow-sm shadow-transparent transition-all duration-500 hover:bg-[#a0fcf9]">
                 Settings
               </button>
             </div>
@@ -77,23 +75,127 @@ export default function Profile() {
                 </svg>
               </p>
               <ul className="flex items-center max-sm:justify-center max-sm:flex-wrap gap-2.5">
-                <li className="py-3.5 px-7 rounded-full bg-orange-50 font-semibold text-base leading-7 text-gray-700">
+                <li className="py-3.5 px-7 rounded-full bg-[#48cfcb] font-semibold text-base leading-7 text-[#F5F5F5]">
                   HTML
                 </li>
-                <li className="py-3.5 px-7 rounded-full bg-orange-50 font-semibold text-base leading-7 text-gray-700">
+                <li className="py-3.5 px-7 rounded-full bg-[#48cfcb] font-semibold text-base leading-7 text-[#F5F5F5]">
                   CSS
                 </li>
-                <li className="py-3.5 px-7 rounded-full bg-orange-50 font-semibold text-base leading-7 text-gray-700">
+                <li className="py-3.5 px-7 rounded-full bg-[#48cfcb] font-semibold text-base leading-7 text-[#F5F5F5]">
                   Dart
                 </li>
-                <li className="py-3.5 px-7 rounded-full bg-orange-50 font-semibold text-base leading-7 text-gray-700">
+                <li className="py-3.5 px-7 rounded-full bg-[#48cfcb] font-semibold text-base leading-7 text-[#F5F5F5]">
                   C++
                 </li>
-                <li className="py-3.5 px-7 rounded-full bg-orange-50 font-semibold text-base leading-7 text-gray-700">
+                <li className="py-3.5 px-7 rounded-full bg-[#48cfcb] font-semibold text-base leading-7 text-[#F5F5F5]">
                   UI Design
                 </li>
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+      <section className="py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h2 className="font-manrope font-bold text-4xl text-black mb-8 max-xl:text-center">
+            Your Arts
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8">
+            <a
+              href="javascript:;"
+              className="relative bg-cover group rounded-3xl bg-center overflow-hidden mx-auto sm:mr-0 xl:mx-auto cursor-pointer"
+            >
+              <Image
+                className="rounded-2xl object-cover"
+                src="https://pagedone.io/asset/uploads/1700731972.png"
+                alt="Jacket image"
+                width={500}
+                height={500}
+              />
+              <div className="absolute z-10 bottom-3 left-0 mx-3 p-3 bg-white w-[calc(100%-24px)] rounded-xl shadow-sm shadow-transparent transition-all duration-500 group-hover:shadow-indigo-200 group-hover:bg-[#48CFCB]">
+                <div className="flex items-center justify-between mb-2">
+                  <h6 className="font-semibold text-base leading-7 text-[#424242] ">
+                    Trendy Jacket
+                  </h6>
+                  <h6 className="font-semibold text-base leading-7 text-[#424242] text-right">
+                    $100
+                  </h6>
+                </div>
+                <p className="text-xs leading-5 text-gray-500">
+                  Women’s Winter Wear
+                </p>
+              </div>
+            </a>
+            <a
+              href="javascript:;"
+              className="relative bg-cover group rounded-3xl bg-center overflow-hidden mx-auto sm:ml-0 xl:mx-auto cursor-pointer"
+            >
+              <Image
+                className="rounded-2xl object-cover"
+                src="https://pagedone.io/asset/uploads/1700731993.png"
+                alt="Blazer image"
+                width={500}
+                height={500}
+              />
+              <div className="absolute z-10 bottom-3 left-0 mx-3 p-3 bg-white w-[calc(100%-24px)] rounded-xl shadow-sm shadow-transparent transition-all duration-500 group-hover:shadow-indigo-200 group-hover:bg-[#48CFCB]">
+                <div className="flex items-center justify-between mb-2">
+                  <h6 className="font-semibold text-base leading-7 text-[#424242] ">
+                    Black Blazer
+                  </h6>
+                  <h6 className="font-semibold text-base leading-7 text-[#424242] text-right">
+                    $100
+                  </h6>
+                </div>
+                <p className="text-xs leading-5 text-gray-500">Men’s Suits</p>
+              </div>
+            </a>
+            <a
+              href="javascript:;"
+              className="relative bg-cover group rounded-3xl bg-center overflow-hidden mx-auto sm:mr-0 xl:mx-auto cursor-pointer"
+            >
+              <Image
+                className="rounded-2xl object-cover"
+                src="https://pagedone.io/asset/uploads/1700732011.png"
+                alt="printed top image"
+                width={500}
+                height={500}
+              />
+              <div className="absolute z-10 bottom-3 left-0 mx-3 p-3 bg-white w-[calc(100%-24px)] rounded-xl shadow-sm shadow-transparent transition-all duration-500 group-hover:shadow-indigo-200 group-hover:bg-[#48CFCB]">
+                <div className="flex items-center justify-between mb-2">
+                  <h6 className="font-semibold text-base leading-7 text-[#424242] ">
+                    Red Flowers
+                  </h6>
+                  <h6 className="font-semibold text-base leading-7 text-[#424242] text-right">
+                    $100
+                  </h6>
+                </div>
+                <p className="text-xs leading-5 text-gray-500">Womenswear</p>
+              </div>
+            </a>
+
+            <a
+              href="javascript:;"
+              className="relative bg-cover group rounded-3xl bg-center overflow-hidden mx-auto sm:ml-0 xl:mx-auto cursor-pointer"
+            >
+              <Image
+                className="rounded-2xl object-cover"
+                src="https://pagedone.io/asset/uploads/1700732027.png"
+                alt="Denim jacket image"
+                width={500}
+                height={500}
+              />
+              <div className="absolute z-10 bottom-3 left-0 mx-3 p-3 bg-white w-[calc(100%-24px)] rounded-xl shadow-sm shadow-transparent transition-all duration-500 group-hover:shadow-indigo-200 group-hover:bg-[#48CFCB]">
+                <div className="flex items-center justify-between mb-2">
+                  <h6 className="font-semibold text-base leading-7 text-[#424242] ">
+                    Denim Jacket
+                  </h6>
+                  <h6 className="font-semibold text-base leading-7 text-[#424242] text-right">
+                    $100
+                  </h6>
+                </div>
+                <p className="text-xs leading-5 text-gray-500">Children Wear</p>
+              </div>
+            </a>
           </div>
         </div>
       </section>
