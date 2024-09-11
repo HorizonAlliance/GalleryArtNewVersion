@@ -71,7 +71,7 @@ export default function SignupFormDemo() {
             </div>
           </form>
           <p className="text-neutral-800 text-sm max-w-sm mt-2 flex justify-end dark:text-neutral-300">
-            Have an account? <a href="/Login"> Login Now</a>
+            Already have an account? &nbsp;<a href="/Login"> Login Now</a>
           </p>
         </div>
       </div>
