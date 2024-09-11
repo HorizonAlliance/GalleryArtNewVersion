@@ -1,3 +1,4 @@
+// Use client directive to ensure client-side rendering
 "use client";
 
 import React, { useState, Suspense } from "react";
@@ -8,6 +9,7 @@ import Image from "next/image";
 import BlurFade from "@/app/(partials)/BlurFade";
 import { AnimatePresence, motion } from "framer-motion";
 
+// Separate the CategoryPage component into a client-side only component
 const CategoryPage = () => {
   const searchParams = useSearchParams();
   const category = searchParams.get("category") || "";
@@ -25,46 +27,44 @@ const CategoryPage = () => {
   };
 
   return (
-    <>
-      <Suspense fallback={<div>Loading...</div>}>
-        <section
-          id="photos"
-          className="w-full h-full grid grid-cols-1 max-w-7xl mx-auto relative p-5 sm:p-0 sm:pt-10 sm:pb-10"
-        >
-          <CategoryName category={category} />
+    <section
+      id="photos"
+      className="w-full h-full grid grid-cols-1 max-w-7xl mx-auto relative p-5 sm:p-0 sm:pt-10 sm:pb-10"
+    >
+      <CategoryName category={category} />
 
-          {filteredCards.length > 0 ? (
-            <div className="columns-1 sm:columns-3">
-              {filteredCards.map((card, idx) => (
-                <BlurFade key={card.id} delay={0.25 + idx * 0.05} inView>
-                  <img
-                    className="mb-4 size-full rounded-lg object-contain cursor-pointer"
-                    src={card.thumbnail}
-                    alt={card.title}
-                    onClick={() => handleCardClick(card)}
-                  />
-                </BlurFade>
-              ))}
-            </div>
-          ) : (
-            <BlurFade delay={0.25 * 0.05} inView>
-              <div className="flex justify-center items-center h-64">
-                <h2 className="text-xl font-bold text-black">Not Found</h2>
-              </div>
+      {filteredCards.length > 0 ? (
+        <div className="columns-1 sm:columns-3">
+          {filteredCards.map((card, idx) => (
+            <BlurFade key={card.id} delay={0.25 + idx * 0.05} inView>
+              <img
+                className="mb-4 size-full rounded-lg object-contain cursor-pointer"
+                src={card.thumbnail}
+                alt={card.title}
+                onClick={() => handleCardClick(card)}
+              />
             </BlurFade>
-          )}
+          ))}
+        </div>
+      ) : (
+        // Display "Not Found" if no cards match the category
+        <BlurFade delay={0.25 * 0.05} inView>
+          <div className="flex justify-center items-center h-64">
+            <h2 className="text-xl font-bold text-black">Not Found</h2>
+          </div>
+        </BlurFade>
+      )}
 
-          <AnimatePresence>
-            {selectedCard && (
-              <Modal selected={selectedCard} handleClose={handleClose} />
-            )}
-          </AnimatePresence>
-        </section>
-      </Suspense>
-    </>
+      <AnimatePresence>
+        {selectedCard && (
+          <Modal selected={selectedCard} handleClose={handleClose} />
+        )}
+      </AnimatePresence>
+    </section>
   );
 };
 
+// Modal component for displaying card details
 const Modal = ({
   selected,
   handleClose,
@@ -89,7 +89,7 @@ const Modal = ({
         exit={{ scale: 0.9 }}
         transition={{ duration: 0.4, ease: "easeInOut" }}
       >
-        {/* Gambar di bagian bawah */}
+        {/* Image inside the modal */}
         <div className="relative w-full h-auto" style={{ aspectRatio: "16/9" }}>
           <Image
             src={selected.thumbnail}
@@ -98,7 +98,7 @@ const Modal = ({
             objectFit="cover"
             className="rounded-t-lg"
           />
-          {/* Konten teks di atas gambar */}
+          {/* Text content overlay */}
           <div className="absolute w-full inset-0 flex items-end justify-start">
             <div className="w-full p-4 bg-gradient-to-t from-black to-transparent">
               <p className="text-white text-sm">{selected.content}</p>
@@ -106,7 +106,7 @@ const Modal = ({
           </div>
         </div>
 
-        {/* Tombol close di pojok kanan atas */}
+        {/* Close button */}
         <button
           className="absolute top-4 right-4 text-white bg-black rounded-full p-2"
           onClick={handleClose}
@@ -118,4 +118,11 @@ const Modal = ({
   );
 };
 
-export default CategoryPage;
+// Wrap the CategoryPage with Suspense to handle CSR gracefully
+export default function CategoryPageWrapper() {
+  return (
+    <Suspense fallback={<div>Loading Category Page...</div>}>
+      <CategoryPage />
+    </Suspense>
+  );
+}
