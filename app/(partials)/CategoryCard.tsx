@@ -11,44 +11,46 @@ export const Categories: Category[] = [
   {
     id: 1,
     category: "Abstract",
-    thumbnail: "/assets/img/Tiger notes paper moon stars -MollyRoselee.jpg",
+    thumbnail: "/assets/img/Background texture abstract art - ksushlapush.jpg",
     title: "Abstract",
   },
   {
     id: 2,
     category: "Fantasy",
-    thumbnail: "/assets/img/Nature art landscape mountain - Wafidnside.jpg",
+    thumbnail: "/assets/img/Tiger notes paper moon stars -MollyRoselee.jpg",
     title: "Fantasy",
   },
   {
     id: 2,
-    category: "Fantasy",
-    thumbnail: "/assets/img/Nature art landscape mountain - Wafidnside.jpg",
-    title: "Fantasy",
+    category: "AI",
+    thumbnail: "/assets/img/AI generated girl rain child - Jhollu7.jpg",
+    title: "AI",
   },
   {
     id: 2,
-    category: "Fantasy",
-    thumbnail: "/assets/img/Nature art landscape mountain - Wafidnside.jpg",
-    title: "Fantasy",
+    category: "Animal",
+    thumbnail:
+      "/assets/img/Bird abstract drawing background - BiancaVanDijk.jpg",
+    title: "Animal",
   },
   {
     id: 2,
-    category: "Fantasy",
-    thumbnail: "/assets/img/Nature art landscape mountain - Wafidnside.jpg",
-    title: "Fantasy",
+    category: "Person",
+    thumbnail:
+      "/assets/img/woman model dress fashion style - Shimabdinzade.jpg",
+    title: "Person",
   },
   {
     id: 2,
-    category: "Fantasy",
-    thumbnail: "/assets/img/Nature art landscape mountain - Wafidnside.jpg",
-    title: "Fantasy",
+    category: "Panaroma",
+    thumbnail: "/assets/img/Landscape sun sunset mountain - Regencygirl123.jpg",
+    title: "Panaroma",
   },
   {
     id: 2,
-    category: "Fantasy",
-    thumbnail: "/assets/img/Nature art landscape mountain - Wafidnside.jpg",
-    title: "Fantasy",
+    category: "Moon",
+    thumbnail: "/assets/img/Moon stars night dream landscape - Kinkate.jpg",
+    title: "Moon",
   },
 ];
 
