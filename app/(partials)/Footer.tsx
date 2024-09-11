@@ -4,7 +4,7 @@ import React from "react";
 
 const Footer: React.FC = () => {
   return (
-    <section className="py-12 mt-0 bg-gradient-to-r from-[#229799] to-[#00CCDD]">
+    <section className="py-12 mt-0 bg-gradient-to-r from-[#229799] to-[#00CCDD] dark:bg-slate-800">
       <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
         <div className="text-center xl:flex xl:items-center xl:justify-between xl:text-left">
           {/* Logo on the left */}

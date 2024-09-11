@@ -4,8 +4,8 @@ import React from 'react';
 
 export default function JoinUs () {
     return (
-        <section className=" 2xl:py-24 2xl:bg-gray-50 px-3 mb-5">
-            <div className="px-4 mx-auto bg-[#229799] dark:bg-black max-w-7xl sm:px-6 lg:px-8 rounded-xl">
+        <section className=" 2xl:py-24 dark:bg-black px-3 mb-5">
+            <div className="px-4 mx-auto bg-[#229799] dark:bg-slate-800 max-w-7xl sm:px-6 lg:px-8 rounded-xl">
                 <div className="py-10 sm:py-16 lg:py-24 2xl:pl-24">
                     <div className="grid items-center grid-cols-1 gap-y-8 lg:grid-cols-2 lg:gap-x-8 2xl:gap-x-20">
                         <div className="lg:order-2 2xl:-mr-24">
