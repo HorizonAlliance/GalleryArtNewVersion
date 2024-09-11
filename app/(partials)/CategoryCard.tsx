@@ -42,9 +42,9 @@ export const Categories: Category[] = [
   },
   {
     id: 2,
-    category: "Panaroma",
+    category: "Panorama",
     thumbnail: "/assets/img/Landscape sun sunset mountain - Regencygirl123.jpg",
-    title: "Panaroma",
+    title: "Panorama",
   },
   {
     id: 2,
