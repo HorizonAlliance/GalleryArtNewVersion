@@ -47,7 +47,7 @@ export default function Profile() {
                 />
               </svg>
               <span className="px-2 font-medium text-base leading-7 text-gray-700 transition-all duration-500 group-hover:text-[#F5F5F5]">
-                Software Engineer
+                Graphic Designer
               </span>
             </button>
           </div>
@@ -63,35 +63,19 @@ export default function Profile() {
             <div className="flex flex-col md:flex-row items-center gap-6 ">
               <p className="flex items-center gap-2 font-medium text-lg leading-8 text-gray-400 ">
                 Skills
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M8.78135 5.55191C9.4453 3.5173 9.77728 2.5 10.3928 2.5C11.0083 2.5 11.3403 3.5173 12.0043 5.55191L12.2949 6.44244C12.4784 7.00479 12.5701 7.28596 12.7928 7.44706C13.0155 7.60816 13.3125 7.60816 13.9063 7.60816H14.8683C17.0355 7.60816 18.119 7.60816 18.3081 8.19335C18.4972 8.77854 17.6169 9.40763 15.8563 10.6658L15.0921 11.2118C14.6069 11.5586 14.3643 11.732 14.278 11.9937C14.1918 12.2554 14.2841 12.5382 14.4687 13.1038L14.7569 13.9872C15.4209 16.0218 15.7529 17.0391 15.2549 17.3993C14.7569 17.7595 13.8878 17.1308 12.1496 15.8733L11.3887 15.323C10.9083 14.9754 10.6681 14.8016 10.3928 14.8016C10.1175 14.8016 9.87731 14.9754 9.39687 15.323L8.63605 15.8733C6.89779 17.1308 6.02866 17.7595 5.5307 17.3993C5.03273 17.0391 5.36471 16.0218 6.02866 13.9872L6.31927 13.0966C6.50278 12.5343 6.59454 12.2531 6.50948 11.9924C6.42441 11.7318 6.18419 11.558 5.70375 11.2104L4.94293 10.6601C3.20467 9.40261 2.33555 8.77389 2.52575 8.19102C2.71596 7.60816 3.79026 7.60816 5.93886 7.60816H6.87929C7.47315 7.60816 7.77008 7.60816 7.99277 7.44706C8.21547 7.28596 8.30723 7.00479 8.49074 6.44244L8.78135 5.55191Z"
-                    stroke="#9CA3AF"
-                    stroke-width="1.6"
-                  />
-                </svg>
               </p>
               <ul className="flex items-center max-sm:justify-center max-sm:flex-wrap gap-2.5">
                 <li className="py-3.5 px-7 rounded-full bg-[#48cfcb] font-semibold text-base leading-7 text-[#F5F5F5]">
-                  HTML
+                  Adobe
                 </li>
                 <li className="py-3.5 px-7 rounded-full bg-[#48cfcb] font-semibold text-base leading-7 text-[#F5F5F5]">
-                  CSS
+                  Figma
                 </li>
                 <li className="py-3.5 px-7 rounded-full bg-[#48cfcb] font-semibold text-base leading-7 text-[#F5F5F5]">
-                  Dart
+                  Corel draw
                 </li>
                 <li className="py-3.5 px-7 rounded-full bg-[#48cfcb] font-semibold text-base leading-7 text-[#F5F5F5]">
-                  C++
-                </li>
-                <li className="py-3.5 px-7 rounded-full bg-[#48cfcb] font-semibold text-base leading-7 text-[#F5F5F5]">
-                  UI Design
+                  Ibis paint
                 </li>
               </ul>
             </div>
@@ -100,8 +84,8 @@ export default function Profile() {
       </section>
       <section className="py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="font-manrope font-bold text-4xl text-black mb-8 max-xl:text-center">
-            Your Arts
+          <h2 className="font-manrope font-bold text-4xl text-black dark:text-white mb-8 max-xl:text-center">
+            My Arts
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8">
             <a
@@ -110,7 +94,7 @@ export default function Profile() {
             >
               <Image
                 className="rounded-2xl object-cover"
-                src="https://pagedone.io/asset/uploads/1700731972.png"
+                src="/assets/img/Tiger notes paper moon stars -MollyRoselee.jpg"
                 alt="Jacket image"
                 width={500}
                 height={500}
@@ -118,14 +102,11 @@ export default function Profile() {
               <div className="absolute z-10 bottom-3 left-0 mx-3 p-3 bg-white w-[calc(100%-24px)] rounded-xl shadow-sm shadow-transparent transition-all duration-500 group-hover:shadow-indigo-200 group-hover:bg-[#48CFCB]">
                 <div className="flex items-center justify-between mb-2">
                   <h6 className="font-semibold text-base leading-7 text-[#424242] ">
-                    Trendy Jacket
-                  </h6>
-                  <h6 className="font-semibold text-base leading-7 text-[#424242] text-right">
-                    $100
+                    Tiger notes paper moon stars
                   </h6>
                 </div>
                 <p className="text-xs leading-5 text-gray-500">
-                  Women’s Winter Wear
+                  Animal
                 </p>
               </div>
             </a>
@@ -135,21 +116,18 @@ export default function Profile() {
             >
               <Image
                 className="rounded-2xl object-cover"
-                src="https://pagedone.io/asset/uploads/1700731993.png"
-                alt="Blazer image"
+                src="/assets/img/Woman face grunge drawing line art - BiancaVandijk.jpg"
+                alt="Women Face Line Art"
                 width={500}
                 height={500}
               />
               <div className="absolute z-10 bottom-3 left-0 mx-3 p-3 bg-white w-[calc(100%-24px)] rounded-xl shadow-sm shadow-transparent transition-all duration-500 group-hover:shadow-indigo-200 group-hover:bg-[#48CFCB]">
                 <div className="flex items-center justify-between mb-2">
                   <h6 className="font-semibold text-base leading-7 text-[#424242] ">
-                    Black Blazer
-                  </h6>
-                  <h6 className="font-semibold text-base leading-7 text-[#424242] text-right">
-                    $100
+                    Women Face Line Art
                   </h6>
                 </div>
-                <p className="text-xs leading-5 text-gray-500">Men’s Suits</p>
+                <p className="text-xs leading-5 text-gray-500">Line Art</p>
               </div>
             </a>
             <a
@@ -158,21 +136,18 @@ export default function Profile() {
             >
               <Image
                 className="rounded-2xl object-cover"
-                src="https://pagedone.io/asset/uploads/1700732011.png"
-                alt="printed top image"
+                src="/assets/img/sea-view-JohnDoe .jpg"
+                alt="Sea View"
                 width={500}
                 height={500}
               />
               <div className="absolute z-10 bottom-3 left-0 mx-3 p-3 bg-white w-[calc(100%-24px)] rounded-xl shadow-sm shadow-transparent transition-all duration-500 group-hover:shadow-indigo-200 group-hover:bg-[#48CFCB]">
                 <div className="flex items-center justify-between mb-2">
                   <h6 className="font-semibold text-base leading-7 text-[#424242] ">
-                    Red Flowers
-                  </h6>
-                  <h6 className="font-semibold text-base leading-7 text-[#424242] text-right">
-                    $100
+                    Sea View
                   </h6>
                 </div>
-                <p className="text-xs leading-5 text-gray-500">Womenswear</p>
+                <p className="text-xs leading-5 text-gray-500">Nature</p>
               </div>
             </a>
 
@@ -182,21 +157,18 @@ export default function Profile() {
             >
               <Image
                 className="rounded-2xl object-cover"
-                src="https://pagedone.io/asset/uploads/1700732027.png"
-                alt="Denim jacket image"
+                src="/assets/img/ai-generated-jhonDoe.jpg"
+                alt="Fox"
                 width={500}
                 height={500}
               />
               <div className="absolute z-10 bottom-3 left-0 mx-3 p-3 bg-white w-[calc(100%-24px)] rounded-xl shadow-sm shadow-transparent transition-all duration-500 group-hover:shadow-indigo-200 group-hover:bg-[#48CFCB]">
                 <div className="flex items-center justify-between mb-2">
                   <h6 className="font-semibold text-base leading-7 text-[#424242] ">
-                    Denim Jacket
-                  </h6>
-                  <h6 className="font-semibold text-base leading-7 text-[#424242] text-right">
-                    $100
+                  Fox
                   </h6>
                 </div>
-                <p className="text-xs leading-5 text-gray-500">Children Wear</p>
+                <p className="text-xs leading-5 text-gray-500">Animal</p>
               </div>
             </a>
           </div>

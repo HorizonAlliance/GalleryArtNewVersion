@@ -4,7 +4,7 @@ import React from "react";
 
 export default function Content() {
     return (
-        <section className="py-10 bg-gradient-to-t from-[#48CFCB] to-[#229799] sm:py-16 lg:py-24 dark:bg-black">
+        <section className="py-10 bg-gradient-to-t from-[#48CFCB] to-[#229799] sm:py-16 lg:py-24 dark:bg-slate-800">
             <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
                 <div className="max-w-xl mx-auto text-center">
                     <div className="inline-flex px-4 py-1.5 mx-auto rounded-full bg-gradient-to-r from-[#6439FF] to-[#7CF5FF]">
