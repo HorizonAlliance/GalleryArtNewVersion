@@ -13,7 +13,7 @@ export function HowItWorks() {
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image
-              src="/img/clickhere.png"
+              src="/assets/homepageImage/clickhere.png"
               alt="ClickHere"
               width={500}
               height={600}
@@ -21,7 +21,7 @@ export function HowItWorks() {
               layout="responsive"
             />
             <Image
-              src="/img/login.png"
+              src="/assets/homepageImage/login.png"
               alt="Login"
               width={500}
               height={600}
@@ -29,7 +29,7 @@ export function HowItWorks() {
               layout="responsive"
             />
             <Image
-              src="/img/registere.png"
+              src="/assets/homepageImage/registere.png"
               alt="Registered"
               width={500}
               height={600}
@@ -70,7 +70,7 @@ export function HowItWorks() {
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image
-              src="profilePage.png"
+              src="/assets/homepageImage/profilePage.png"
               alt="Profile Page"
               width={500}
               height={500}
