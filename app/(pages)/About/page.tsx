@@ -72,10 +72,10 @@ const AboutPage = (props: Props) => {
             className="flex justify-center items-center w-full"
           >
             <Image
-              src="https://images.unsplash.com/photo-1725681549059-77fa94863ec6?q=80&w=2127&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src="https://images.unsplash.com/photo-1725986038200-383d1925a822?q=80&w=1914&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="logo"
-              width={300}
-              height={300}
+              width={500}
+              height={500}
               className="rounded-lg shadow-black shadow-md sm:hidden lg:block"
             />
           </motion.div>
@@ -99,7 +99,7 @@ const AboutPage = (props: Props) => {
             variants={container}
             initial="hidden"
             animate="show"
-            className="grid grid-cols-1 min-[500px]:grid-cols-2 md:grid-cols-6 lg:grid-cols-5 gap-8 max-w-xl mx-auto md:max-w-3xl lg:max-w-full"
+            className="grid grid-cols-1 min-[500px]:grid-cols-2 md:grid-cols-6 lg:grid-cols-3 gap-8 w-full mx-auto md:max-w-3xl lg:max-w-full justify-items-center items-center place-items-center"
           >
             <motion.div
               initial={item.hidden}
@@ -110,41 +110,18 @@ const AboutPage = (props: Props) => {
             >
               <div className="relative mb-6">
                 <Image
-                  src="https://pagedone.io/asset/uploads/1696238374.png"
-                  alt="Antonio image"
+                  src="/assets/img/damar.jpg"
+                  alt="avatar"
                   className="w-40 h-40 rounded-full mx-auto transition-all duration-500 object-cover border border-solid border-transparent group-hover:border-indigo-600"
                   width={400}
                   height={400}
                 />
               </div>
               <h4 className="text-xl font-semibold text-gray-900 mb-2 capitalize text-center transition-all duration-500 dark:text-white group-hover:text-indigo-600">
-                Antonio Roberto{" "}
+                Damar J. Justin{" "}
               </h4>
               <span className="text-gray-500 text-center block transition-all duration-500 group-hover:text-gray-900">
-                Founder
-              </span>
-            </motion.div>
-            <motion.div
-              initial={item.hidden}
-              whileInView={item.show}
-              transition={{ duration: 0.5, delay: 0.2, ease: "easeInOut" }}
-              viewport={{ once: true }}
-              className="block group md:col-span-2 lg:col-span-1 "
-            >
-              <div className="relative mb-6">
-                <Image
-                  src="https://pagedone.io/asset/uploads/1696238396.png"
-                  alt="Patricia image"
-                  className="w-40 h-40 rounded-full mx-auto transition-all duration-500 object-cover border border-solid border-transparent group-hover:border-indigo-600"
-                  width={400}
-                  height={400}
-                />
-              </div>
-              <h4 className="text-xl font-semibold text-gray-900 mb-2 capitalize text-center transition-all duration-500 dark:text-white group-hover:text-indigo-600">
-                Patricia Angely{" "}
-              </h4>
-              <span className="text-gray-500 text-center block transition-all duration-500 group-hover:text-gray-900">
-                Co-Founder
+                Designer
               </span>
             </motion.div>
             <motion.div
@@ -160,7 +137,7 @@ const AboutPage = (props: Props) => {
             >
               <div className="relative mb-6">
                 <Image
-                  src="	https://pagedone.io/asset/uploads/1696238411.png"
+                  src="/assets/img/vradita.jpg"
                   alt="Jerom image"
                   className="w-40 h-40 rounded-full mx-auto transition-all duration-500 object-cover border border-solid border-transparent group-hover:border-indigo-600"
                   width={400}
@@ -168,10 +145,10 @@ const AboutPage = (props: Props) => {
                 />
               </div>
               <h4 className="text-xl font-semibold text-gray-900 mb-2 capitalize text-center transition-all duration-500 dark:text-white group-hover:text-indigo-600">
-                Jerom Bell{" "}
+                Vradita C. Kusuma{" "}
               </h4>
               <span className="text-gray-500 text-center block transition-all duration-500 group-hover:text-gray-900">
-                Chairman
+                Leader
               </span>
             </motion.div>
             <motion.div
@@ -179,45 +156,22 @@ const AboutPage = (props: Props) => {
               whileInView={item.show}
               transition={{ duration: 0.5, delay: 0.2, ease: "easeInOut" }}
               viewport={{ once: true }}
-              className="block group md:col-span-2 lg:col-span-1 md:col-start-2 lg:col-start-4"
+              className="block group md:col-span-2 lg:col-span-1 "
             >
               <div className="relative mb-6">
                 <Image
-                  src="	https://pagedone.io/asset/uploads/1696238425.png"
-                  alt="Yasmine image"
+                  src="/assets/img/naufal.jpg"
+                  alt="avatar"
                   className="w-40 h-40 rounded-full mx-auto transition-all duration-500 object-cover border border-solid border-transparent group-hover:border-indigo-600"
                   width={400}
                   height={400}
                 />
               </div>
               <h4 className="text-xl font-semibold text-gray-900 mb-2 capitalize text-center transition-all duration-500 dark:text-white group-hover:text-indigo-600">
-                Yasmine Tano{" "}
+                Naufal A. F.{" "}
               </h4>
               <span className="text-gray-500 text-center block transition-all duration-500 group-hover:text-gray-900">
-                CEO
-              </span>
-            </motion.div>
-            <motion.div
-              initial={item.hidden}
-              whileInView={item.show}
-              transition={{ duration: 0.5, delay: 0.2, ease: "easeInOut" }}
-              viewport={{ once: true }}
-              className="block group min-[500px]:col-span-2 mx-auto md:col-span-2 lg:col-span-1 "
-            >
-              <div className="relative mb-6">
-                <Image
-                  src="https://pagedone.io/asset/uploads/1696238446.png"
-                  alt="Martin image"
-                  className="w-40 h-40 rounded-full mx-auto transition-all duration-500 object-cover border border-solid border-transparent group-hover:border-indigo-600"
-                  width={400}
-                  height={400}
-                />
-              </div>
-              <h4 className="text-xl font-semibold text-gray-900 mb-2 capitalize text-center transition-all duration-500 dark:text-white group-hover:text-indigo-600">
-                Martin Darbys
-              </h4>
-              <span className="text-gray-500 text-center block transition-all duration-500 group-hover:text-gray-900">
-                Product Manager
+                Programmer
               </span>
             </motion.div>
           </motion.div>
