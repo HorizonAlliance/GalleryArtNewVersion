@@ -19,7 +19,7 @@ export default function SignupFormDemo() {
     <>
       <RetroGrid />
       <div className="min-h-screen flex items-center justify-center px-4 py-8 sm:px-6 sm:py-12 md:px-8 md:py-16">
-        <div className="max-w-md w-full mx-auto rounded-lg md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
+        <div className="max-w-md w-full mx-auto rounded-lg md:rounded-2xl p-4 md:p-8 shadow-input bg-white/30 dark:bg-black/30 backdrop-blur">
           <h2 className="font-bold text-4xl text-neutral-800 dark:text-neutral-200">
             Register
           </h2>
