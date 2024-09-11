@@ -148,7 +148,6 @@ const Modal = ({
           {/* Konten teks di atas gambar */}
           <div className="absolute w-full inset-0 flex items-end justify-start">
             <div className="w-full p-4 bg-gradient-to-t from-black to-transparent">
-              <p className="text-white text-sm">{selected.content}</p>
             </div>
           </div>
         </div>
