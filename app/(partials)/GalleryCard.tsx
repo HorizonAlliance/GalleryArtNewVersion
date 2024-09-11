@@ -55,12 +55,14 @@ export const CategoryCard = ({ categories }: { categories: Category[] }) => {
 
 const ImageComponent = ({ category }: { category: Category }) => {
   return (
-    <div
-      className="relative flex items-center justify-center h-full w-full bg-cover bg-center"
-      style={{
-        backgroundImage: `url(${category.thumbnail})`,
-      }}
-    >
+    <div className="relative flex items-center justify-center h-full w-full">
+      <Image
+        src={category.thumbnail}
+        alt={category.title}
+        layout="fill"
+        objectFit="cover"
+        className="absolute inset-0"
+      />
       {/* Overlay hitam dengan transparansi */}
       <div className="absolute inset-0 bg-black opacity-40"></div>
 
@@ -137,7 +139,7 @@ const Modal = ({
         {/* Gambar di bagian bawah */}
         <div className="relative w-full h-auto" style={{ aspectRatio: "16/9" }}>
           <Image
-            src={selected.thumbnail} // Pastikan URL gambar benar
+            src={selected.thumbnail}
             alt={selected.title}
             layout="fill"
             objectFit="cover" // Agar gambar tidak terdistorsi
