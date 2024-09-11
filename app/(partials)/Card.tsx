@@ -14,11 +14,10 @@ export const cards: Card[] = [
     content: (
       <div>
         <p className="font-bold md:text-4xl text-xl text-white">
-          House in the woods
+          Tiger notes paper moon stars
         </p>
-        <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-          A serene and tranquil retreat, this house in the woods offers a
-          peaceful escape from the hustle and bustle of city life.
+        <p className="font-normal text-base max-w-lg text-neutral-200">
+          Created by MollyRoselee
         </p>
       </div>
     ),
@@ -26,9 +25,8 @@ export const cards: Card[] = [
     category: "Abstract",
 
     // thumbnail:
-    thumbnail:
-      "https://images.unsplash.com/photo-1476231682828-37e571bc172f?q=80&w=3474&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    title: "House in the Woods",
+    thumbnail: "/assets/img/Tiger notes paper moon stars -MollyRoselee.jpg",
+    title: "Tiger notes paper moon stars",
   },
   {
     id: 2,
@@ -37,16 +35,14 @@ export const cards: Card[] = [
         <p className="font-bold md:text-4xl text-xl text-white">
           House above the clouds
         </p>
-        <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-          Perched high above the world, this house offers breathtaking views and
-          a unique living experience.
+        <p className="font-normal text-base max-w-lg text-neutral-200">
+          Created by Wafidnside
         </p>
       </div>
     ),
     className: "col-span-1",
     category: "Abstract",
-    thumbnail:
-      "https://images.unsplash.com/photo-1464457312035-3d7d0e0c058e?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    thumbnail: "/assets/img/Nature art landscape mountain - Wafidnside.jpg",
     title: "House Above the Clouds",
   },
   {
@@ -54,18 +50,17 @@ export const cards: Card[] = [
     content: (
       <div>
         <p className="font-bold md:text-4xl text-xl text-white">
-          Greens all over
+          Woman face grunge drawing line art
         </p>
-        <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-          A house surrounded by greenery and nature&apos;s beauty. It&apos;s the
-          perfect place to relax, unwind, and enjoy life.
+        <p className="font-normal text-base max-w-lg text-neutral-200">
+          Created by BiancaVandijk
         </p>
       </div>
     ),
     className: "col-span-1",
     category: "ANJAY",
     thumbnail:
-      "https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "/assets/img/Woman face grunge drawing line art - BiancaVandijk.jpg",
     title: "Greens All Over",
   },
   {
