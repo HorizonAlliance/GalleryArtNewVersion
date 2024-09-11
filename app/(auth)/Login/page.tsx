@@ -42,14 +42,14 @@ export default function SignupFormDemo() {
                 className="flex justify-center items-center bg-gradient-to-br relative group/btn from-[#229799] dark:from-zinc-900 dark:to-zinc-900 to-[#48CFCB] dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
                 href="../"
               >
-                &larr; Back
+                `&larr` Back
                 <BottomGradient />
               </a>
               <button
                 className="bg-gradient-to-br relative group/btn from-[#229799] dark:from-zinc-900 dark:to-zinc-900 to-[#48CFCB] block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
                 type="submit"
               >
-                Login &rarr;
+                Login `&rarr`
                 <BottomGradient />
               </button>
             </div>
